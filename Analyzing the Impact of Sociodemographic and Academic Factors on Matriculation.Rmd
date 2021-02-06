@@ -1,0 +1,130 @@
+---
+title: "Deep Analysis of College Matriculation"
+author: "Nile Dixon"
+date: "2/6/2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r}
+library(descr)
+library(MASS)
+library(corrplot)
+library(ggplot2)
+library(knitr)
+
+```
+
+```{r}
+#LOAD DATA INTO MEMORY
+ap.data <- read.csv('data/ap_data.csv')
+demographic.data <- read.csv('data/demographic_data.csv')
+matriculation.data <- read.csv('data/matriculation_data.csv')
+sat.data <- read.csv('data/sat_data.csv')
+special.pops.data <- read.csv('data/special_pops_data.csv')
+school.types.data <- read.csv('data/school_type_data.csv')
+
+```
+
+## Merging Files Together
+
+
+```{r}
+#MERGE FILES TOGETHER
+master.file <- merge(matriculation.data, ap.data, by.x = c('CAMPUS.ID','YEAR'), 
+                     by.y = c('CAMPUS.ID','YEAR'), all.x = TRUE, all.y = FALSE)
+master.file <- merge(master.file, demographic.data, by.x = c('CAMPUS.ID','YEAR'),
+                     by.y = c('CAMPUS.ID','YEAR'), all.x = TRUE, all.y = FALSE)
+master.file <- merge(master.file, sat.data, by.x = c('CAMPUS.ID','YEAR'),
+                     by.y = c('CAMPUS.ID','YEAR'), all.x = TRUE, all.y = FALSE)
+master.file <- merge(master.file, special.pops.data, by.x = c('CAMPUS.ID','YEAR'),
+                     by.y = c('CAMPUS.ID','YEAR'), all.x = TRUE, all.y = FALSE)
+master.file <- merge(master.file, school.types.data, by.x = c('DISTRICT.ID.y','YEAR'),
+                     by.y = c('DISTRICT.ID','YEAR'), all.x = TRUE, all.y = FALSE)
+```
+
+
+```{r}
+#REMOVE NAs
+master.file <- master.file[which(!is.na(master.file$CAMPUS.ID)),]
+
+#FIXING MISSING DATA
+master.file$SAT.PARTICIPATION.RATE[which(is.na(master.file$SAT.PARTICIPATION.RATE))] <- 66.0
+master.file$AP.PARTICIPATION.RATE[which(is.na(master.file$AP.PARTICIPATION.RATE))] <- 26.0
+master.file$SAT.ERW[which(is.na(master.file$SAT.ERW))] <- 500
+master.file$SAT.MATH[which(is.na(master.file$SAT.MATH))] <- 500
+master.file$DESCRIPTION <- toupper(master.file$DESCRIPTION)
+master.file$DESCRIPTION[which(is.na(master.file$DESCRIPTION))] <- "MAJOR URBAN"
+
+#STRINGS TO INTEGERS
+master.file$HIGH.SCHOOL.STUDENTS <- as.integer(master.file$HIGH.SCHOOL.STUDENTS)
+master.file$NOT.FOUND <- as.integer(master.file$NOT.FOUND)
+master.file$NOT.TRACKABLE <- as.integer(master.file$NOT.TRACKABLE)
+```
+
+
+## Derive Statistics From Raw Data
+```{r}
+master.file$POTENTIAL.MATRICULANTS <- master.file$HIGH.SCHOOL.STUDENTS - master.file$NOT.TRACKABLE
+master.file$MATRICULANTS <- master.file$POTENTIAL.MATRICULANTS - master.file$NOT.FOUND
+
+master.file$TOTAL.DEMOGS <- master.file$ASIAN + master.file$NATIVE.AMERICAN + master.file$BLACK + master.file$HISPANIC + master.file$HAWAIIAN + master.file$TWO.RACES + master.file$WHITE
+
+master.file$PERCENT.BLACK.BROWN <- (master.file$BLACK + master.file$HISPANIC) / master.file$TOTAL.DEMOGS
+master.file$PERCENT.WHITE <- master.file$WHITE / master.file$TOTAL.DEMOGS
+master.file$PERCENT.GT <- master.file$GT / master.file$ENROLLMENT
+master.file$PERCENT.CTE <- master.file$CTE / master.file$ENROLLMENT
+master.file$PERCENT.LEP <- master.file$LEP / master.file$ENROLLMENT
+master.file$PERCENT.BIL <- master.file$BIL / master.file$ENROLLMENT
+master.file$PERCENT.ESL <- master.file$ESL / master.file$ENROLLMENT
+master.file$PERCENT.DISADV <- master.file$DISADV / master.file$ENROLLMENT
+master.file$PERCENT.SPED <- master.file$SPED / master.file$ENROLLMENT
+master.file$MATRICULATION.RATE <- master.file$MATRICULANTS / master.file$POTENTIAL.MATRICULANTS
+master.file$SAT.PARTICIPATION.RATE <- master.file$SAT.PARTICIPATION.RATE / 100.0
+master.file$AP.PARTICIPATION.RATE <- master.file$AP.PARTICIPATION.RATE / 100.0
+master.file <- master.file[which(!is.na(master.file$MATRICULATION.RATE)),]
+```
+
+## Correlation Matrix
+```{r}
+master.numeric.df <- master.file[c('AP.PARTICIPATION.RATE','SAT.PARTICIPATION.RATE','SAT.MATH','SAT.ERW','PERCENT.BLACK.BROWN','PERCENT.WHITE','PERCENT.GT','PERCENT.CTE','PERCENT.LEP','PERCENT.BIL','PERCENT.ESL','PERCENT.DISADV','PERCENT.SPED','MATRICULATION.RATE')]
+M <- cor(master.numeric.df, use = 'complete.obs')
+corrplot(M, method = 'pie')
+```
+
+Based on the correlation matrix, these are the factors that seem to positively correlate with college matriculation:
+1. Percent Took AP Exam
+2. Percent Took SAT
+3. Median SAT ERW
+4. Median SAT Math
+5. Percent Gifted and Talented
+6. Percent Participated in Career and Technical Education
+
+Based on the correlation matrix, these are the factors that seem to negatively correlate with college matriculation:
+1. Percent Bilingual
+2. Percent Limited English Proficiency (LEP)
+3. Percent English as Second Language (ESL)
+4. Percent Classified as Disadvantaged
+5. Percent in Special Education
+
+
+## Negative Binomial Regression
+```{r}
+base.model <- glm(MATRICULANTS / POTENTIAL.MATRICULANTS ~ 1, data = master.file)
+model.bil <- glm(MATRICULANTS / POTENTIAL.MATRICULANTS ~ AP.PARTICIPATION.RATE + SAT.PARTICIPATION.RATE + SAT.MATH + SAT.ERW + PERCENT.BLACK.BROWN + PERCENT.WHITE + PERCENT.GT + PERCENT.BIL + PERCENT.DISADV + PERCENT.SPED + DESCRIPTION, data = master.file, family = "binomial")
+model.esl <- glm(MATRICULANTS / POTENTIAL.MATRICULANTS ~ AP.PARTICIPATION.RATE + SAT.PARTICIPATION.RATE + SAT.MATH + SAT.ERW + PERCENT.BLACK.BROWN + PERCENT.WHITE + PERCENT.GT + PERCENT.ESL + PERCENT.DISADV + PERCENT.SPED + DESCRIPTION, data = master.file, family = "binomial")
+model.lep <- glm(MATRICULANTS / POTENTIAL.MATRICULANTS ~ AP.PARTICIPATION.RATE + SAT.PARTICIPATION.RATE + SAT.MATH + SAT.ERW + PERCENT.BLACK.BROWN + PERCENT.WHITE + PERCENT.GT + PERCENT.LEP + PERCENT.DISADV + PERCENT.SPED + DESCRIPTION, data = master.file, family = "binomial")
+summary(model.bil)
+summary(model.esl)
+summary(model.lep)
+```
+
+
+
+```{r}
+campuses.2018 <- master.file[which(master.file$YEAR == 2018),]
+campuses.2018$PREDICTED <- predict(model.bil, campuses.2018, type = 'response')
+campuses.2018$DIFFERENCE <- campuses.2018$MATRICULATION.RATE - campuses.2018$PREDICTED
+
+kable(campuses.2018[c('CAMPUS.NAME.y','PREDICTED','MATRICULATION.RATE')])
+```
