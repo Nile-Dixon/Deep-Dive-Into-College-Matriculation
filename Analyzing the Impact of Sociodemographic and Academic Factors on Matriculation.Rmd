@@ -15,6 +15,13 @@ library(knitr)
 
 ```
 
+## Links To Datasets
+TxHigherEdData http://www.txhighereddata.org/index.cfm?objectid=DE7B0990-D970-11E8-BB650050560100A9
+TEA SAT Data https://tea.texas.gov/reports-and-data/school-performance/accountability-research/college-admissions-testing-sat-and-act
+TEA AP Data https://tea.texas.gov/reports-and-data/school-performance/accountability-research/advanced-placement-and-international-baccalaureate
+TEA Ethnicity Data https://rptsvr1.tea.texas.gov/adhocrpt/adste.html
+TEA Special Population Data https://rptsvr1.tea.texas.gov/adhocrpt/adspr.html
+
 ```{r}
 #LOAD DATA INTO MEMORY
 ap.data <- read.csv('data/ap_data.csv')

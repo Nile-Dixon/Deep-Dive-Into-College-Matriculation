@@ -385,6 +385,9 @@ library(corrplot)</code></pre>
 <pre><code>## corrplot 0.84 loaded</code></pre>
 <pre class="r"><code>library(ggplot2)
 library(knitr)</code></pre>
+<div id="links-to-datasets" class="section level2">
+<h2>Links To Datasets</h2>
+<p>TxHigherEdData <a href="http://www.txhighereddata.org/index.cfm?objectid=DE7B0990-D970-11E8-BB650050560100A9" class="uri">http://www.txhighereddata.org/index.cfm?objectid=DE7B0990-D970-11E8-BB650050560100A9</a> TEA SAT Data <a href="https://tea.texas.gov/reports-and-data/school-performance/accountability-research/college-admissions-testing-sat-and-act" class="uri">https://tea.texas.gov/reports-and-data/school-performance/accountability-research/college-admissions-testing-sat-and-act</a> TEA AP Data <a href="https://tea.texas.gov/reports-and-data/school-performance/accountability-research/advanced-placement-and-international-baccalaureate" class="uri">https://tea.texas.gov/reports-and-data/school-performance/accountability-research/advanced-placement-and-international-baccalaureate</a> TEA Ethnicity Data <a href="https://rptsvr1.tea.texas.gov/adhocrpt/adste.html" class="uri">https://rptsvr1.tea.texas.gov/adhocrpt/adste.html</a> TEA Special Population Data <a href="https://rptsvr1.tea.texas.gov/adhocrpt/adspr.html" class="uri">https://rptsvr1.tea.texas.gov/adhocrpt/adspr.html</a></p>
 <pre class="r"><code>#LOAD DATA INTO MEMORY
 ap.data &lt;- read.csv(&#39;data/ap_data.csv&#39;)
 demographic.data &lt;- read.csv(&#39;data/demographic_data.csv&#39;)
@@ -392,6 +395,7 @@ matriculation.data &lt;- read.csv(&#39;data/matriculation_data.csv&#39;)
 sat.data &lt;- read.csv(&#39;data/sat_data.csv&#39;)
 special.pops.data &lt;- read.csv(&#39;data/special_pops_data.csv&#39;)
 school.types.data &lt;- read.csv(&#39;data/school_type_data.csv&#39;)</code></pre>
+</div>
 <div id="merging-files-together" class="section level2">
 <h2>Merging Files Together</h2>
 <pre class="r"><code>#MERGE FILES TOGETHER

@@ -1,0 +1,2204 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Deep Analysis of College Matriculation},
+  pdfauthor={Nile Dixon},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Deep Analysis of College Matriculation}
+\author{Nile Dixon}
+\date{2/6/2021}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(descr)}
+\KeywordTok{library}\NormalTok{(MASS)}
+\KeywordTok{library}\NormalTok{(corrplot)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## corrplot 0.84 loaded
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{library}\NormalTok{(knitr)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{links-to-datasets}{%
+\subsection{Links To Datasets}\label{links-to-datasets}}
+
+TxHigherEdData
+\url{http://www.txhighereddata.org/index.cfm?objectid=DE7B0990-D970-11E8-BB650050560100A9}
+TEA SAT Data
+\url{https://tea.texas.gov/reports-and-data/school-performance/accountability-research/college-admissions-testing-sat-and-act}
+TEA AP Data
+\url{https://tea.texas.gov/reports-and-data/school-performance/accountability-research/advanced-placement-and-international-baccalaureate}
+TEA Ethnicity Data
+\url{https://rptsvr1.tea.texas.gov/adhocrpt/adste.html} TEA Special
+Population Data \url{https://rptsvr1.tea.texas.gov/adhocrpt/adspr.html}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#LOAD DATA INTO MEMORY}
+\NormalTok{ap.data <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/ap_data.csv'}\NormalTok{)}
+\NormalTok{demographic.data <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/demographic_data.csv'}\NormalTok{)}
+\NormalTok{matriculation.data <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/matriculation_data.csv'}\NormalTok{)}
+\NormalTok{sat.data <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/sat_data.csv'}\NormalTok{)}
+\NormalTok{special.pops.data <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/special_pops_data.csv'}\NormalTok{)}
+\NormalTok{school.types.data <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/school_type_data.csv'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{merging-files-together}{%
+\subsection{Merging Files Together}\label{merging-files-together}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#MERGE FILES TOGETHER}
+\NormalTok{master.file <-}\StringTok{ }\KeywordTok{merge}\NormalTok{(matriculation.data, ap.data, }\DataTypeTok{by.x =} \KeywordTok{c}\NormalTok{(}\StringTok{'CAMPUS.ID'}\NormalTok{,}\StringTok{'YEAR'}\NormalTok{), }
+                     \DataTypeTok{by.y =} \KeywordTok{c}\NormalTok{(}\StringTok{'CAMPUS.ID'}\NormalTok{,}\StringTok{'YEAR'}\NormalTok{), }\DataTypeTok{all.x =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{all.y =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{master.file <-}\StringTok{ }\KeywordTok{merge}\NormalTok{(master.file, demographic.data, }\DataTypeTok{by.x =} \KeywordTok{c}\NormalTok{(}\StringTok{'CAMPUS.ID'}\NormalTok{,}\StringTok{'YEAR'}\NormalTok{),}
+                     \DataTypeTok{by.y =} \KeywordTok{c}\NormalTok{(}\StringTok{'CAMPUS.ID'}\NormalTok{,}\StringTok{'YEAR'}\NormalTok{), }\DataTypeTok{all.x =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{all.y =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{master.file <-}\StringTok{ }\KeywordTok{merge}\NormalTok{(master.file, sat.data, }\DataTypeTok{by.x =} \KeywordTok{c}\NormalTok{(}\StringTok{'CAMPUS.ID'}\NormalTok{,}\StringTok{'YEAR'}\NormalTok{),}
+                     \DataTypeTok{by.y =} \KeywordTok{c}\NormalTok{(}\StringTok{'CAMPUS.ID'}\NormalTok{,}\StringTok{'YEAR'}\NormalTok{), }\DataTypeTok{all.x =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{all.y =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{master.file <-}\StringTok{ }\KeywordTok{merge}\NormalTok{(master.file, special.pops.data, }\DataTypeTok{by.x =} \KeywordTok{c}\NormalTok{(}\StringTok{'CAMPUS.ID'}\NormalTok{,}\StringTok{'YEAR'}\NormalTok{),}
+                     \DataTypeTok{by.y =} \KeywordTok{c}\NormalTok{(}\StringTok{'CAMPUS.ID'}\NormalTok{,}\StringTok{'YEAR'}\NormalTok{), }\DataTypeTok{all.x =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{all.y =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{master.file <-}\StringTok{ }\KeywordTok{merge}\NormalTok{(master.file, school.types.data, }\DataTypeTok{by.x =} \KeywordTok{c}\NormalTok{(}\StringTok{'DISTRICT.ID.y'}\NormalTok{,}\StringTok{'YEAR'}\NormalTok{),}
+                     \DataTypeTok{by.y =} \KeywordTok{c}\NormalTok{(}\StringTok{'DISTRICT.ID'}\NormalTok{,}\StringTok{'YEAR'}\NormalTok{), }\DataTypeTok{all.x =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{all.y =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#REMOVE NAs}
+\NormalTok{master.file <-}\StringTok{ }\NormalTok{master.file[}\KeywordTok{which}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{CAMPUS.ID)),]}
+
+\CommentTok{#FIXING MISSING DATA}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{SAT.PARTICIPATION.RATE[}\KeywordTok{which}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{SAT.PARTICIPATION.RATE))] <-}\StringTok{ }\FloatTok{66.0}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{AP.PARTICIPATION.RATE[}\KeywordTok{which}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{AP.PARTICIPATION.RATE))] <-}\StringTok{ }\FloatTok{26.0}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{SAT.ERW[}\KeywordTok{which}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{SAT.ERW))] <-}\StringTok{ }\DecValTok{500}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{SAT.MATH[}\KeywordTok{which}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{SAT.MATH))] <-}\StringTok{ }\DecValTok{500}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{DESCRIPTION <-}\StringTok{ }\KeywordTok{toupper}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{DESCRIPTION)}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{DESCRIPTION[}\KeywordTok{which}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{DESCRIPTION))] <-}\StringTok{ "MAJOR URBAN"}
+
+\CommentTok{#STRINGS TO INTEGERS}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{HIGH.SCHOOL.STUDENTS <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{HIGH.SCHOOL.STUDENTS)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: NAs introduced by coercion
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{NOT.FOUND <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{NOT.FOUND)}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{NOT.TRACKABLE <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{NOT.TRACKABLE)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{derive-statistics-from-raw-data}{%
+\subsection{Derive Statistics From Raw
+Data}\label{derive-statistics-from-raw-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{POTENTIAL.MATRICULANTS <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{HIGH.SCHOOL.STUDENTS }\OperatorTok{-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{NOT.TRACKABLE}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{MATRICULANTS <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{POTENTIAL.MATRICULANTS }\OperatorTok{-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{NOT.FOUND}
+
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{TOTAL.DEMOGS <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{ASIAN }\OperatorTok{+}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{NATIVE.AMERICAN }\OperatorTok{+}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{BLACK }\OperatorTok{+}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{HISPANIC }\OperatorTok{+}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{HAWAIIAN }\OperatorTok{+}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{TWO.RACES }\OperatorTok{+}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{WHITE}
+
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{PERCENT.BLACK.BROWN <-}\StringTok{ }\NormalTok{(master.file}\OperatorTok{$}\NormalTok{BLACK }\OperatorTok{+}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{HISPANIC) }\OperatorTok{/}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{TOTAL.DEMOGS}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{PERCENT.WHITE <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{WHITE }\OperatorTok{/}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{TOTAL.DEMOGS}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{PERCENT.GT <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{GT }\OperatorTok{/}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{ENROLLMENT}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{PERCENT.CTE <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{CTE }\OperatorTok{/}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{ENROLLMENT}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{PERCENT.LEP <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{LEP }\OperatorTok{/}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{ENROLLMENT}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{PERCENT.BIL <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{BIL }\OperatorTok{/}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{ENROLLMENT}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{PERCENT.ESL <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{ESL }\OperatorTok{/}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{ENROLLMENT}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{PERCENT.DISADV <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{DISADV }\OperatorTok{/}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{ENROLLMENT}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{PERCENT.SPED <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{SPED }\OperatorTok{/}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{ENROLLMENT}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{MATRICULATION.RATE <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{MATRICULANTS }\OperatorTok{/}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{POTENTIAL.MATRICULANTS}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{SAT.PARTICIPATION.RATE <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{SAT.PARTICIPATION.RATE }\OperatorTok{/}\StringTok{ }\FloatTok{100.0}
+\NormalTok{master.file}\OperatorTok{$}\NormalTok{AP.PARTICIPATION.RATE <-}\StringTok{ }\NormalTok{master.file}\OperatorTok{$}\NormalTok{AP.PARTICIPATION.RATE }\OperatorTok{/}\StringTok{ }\FloatTok{100.0}
+\NormalTok{master.file <-}\StringTok{ }\NormalTok{master.file[}\KeywordTok{which}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{MATRICULATION.RATE)),]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{correlation-matrix}{%
+\subsection{Correlation Matrix}\label{correlation-matrix}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{master.numeric.df <-}\StringTok{ }\NormalTok{master.file[}\KeywordTok{c}\NormalTok{(}\StringTok{'AP.PARTICIPATION.RATE'}\NormalTok{,}\StringTok{'SAT.PARTICIPATION.RATE'}\NormalTok{,}\StringTok{'SAT.MATH'}\NormalTok{,}\StringTok{'SAT.ERW'}\NormalTok{,}\StringTok{'PERCENT.BLACK.BROWN'}\NormalTok{,}\StringTok{'PERCENT.WHITE'}\NormalTok{,}\StringTok{'PERCENT.GT'}\NormalTok{,}\StringTok{'PERCENT.CTE'}\NormalTok{,}\StringTok{'PERCENT.LEP'}\NormalTok{,}\StringTok{'PERCENT.BIL'}\NormalTok{,}\StringTok{'PERCENT.ESL'}\NormalTok{,}\StringTok{'PERCENT.DISADV'}\NormalTok{,}\StringTok{'PERCENT.SPED'}\NormalTok{,}\StringTok{'MATRICULATION.RATE'}\NormalTok{)]}
+\NormalTok{M <-}\StringTok{ }\KeywordTok{cor}\NormalTok{(master.numeric.df, }\DataTypeTok{use =} \StringTok{'complete.obs'}\NormalTok{)}
+\KeywordTok{corrplot}\NormalTok{(M, }\DataTypeTok{method =} \StringTok{'pie'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Analyzing-the-Impact-of-Sociodemographic-and-Academic-Factors-on-Matriculation_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+Based on the correlation matrix, these are the factors that seem to
+positively correlate with college matriculation: 1. Percent Took AP Exam
+2. Percent Took SAT 3. Median SAT ERW 4. Median SAT Math 5. Percent
+Gifted and Talented 6. Percent Participated in Career and Technical
+Education
+
+Based on the correlation matrix, these are the factors that seem to
+negatively correlate with college matriculation: 1. Percent Bilingual 2.
+Percent Limited English Proficiency (LEP) 3. Percent English as Second
+Language (ESL) 4. Percent Classified as Disadvantaged 5. Percent in
+Special Education
+
+\hypertarget{negative-binomial-regression}{%
+\subsection{Negative Binomial
+Regression}\label{negative-binomial-regression}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{base.model <-}\StringTok{ }\KeywordTok{glm}\NormalTok{(MATRICULANTS }\OperatorTok{/}\StringTok{ }\NormalTok{POTENTIAL.MATRICULANTS }\OperatorTok{~}\StringTok{ }\DecValTok{1}\NormalTok{, }\DataTypeTok{data =}\NormalTok{ master.file)}
+\NormalTok{model.bil <-}\StringTok{ }\KeywordTok{glm}\NormalTok{(MATRICULANTS }\OperatorTok{/}\StringTok{ }\NormalTok{POTENTIAL.MATRICULANTS }\OperatorTok{~}\StringTok{ }\NormalTok{AP.PARTICIPATION.RATE }\OperatorTok{+}\StringTok{ }\NormalTok{SAT.PARTICIPATION.RATE }\OperatorTok{+}\StringTok{ }\NormalTok{SAT.MATH }\OperatorTok{+}\StringTok{ }\NormalTok{SAT.ERW }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.BLACK.BROWN }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.WHITE }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.GT }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.BIL }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.DISADV }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.SPED }\OperatorTok{+}\StringTok{ }\NormalTok{DESCRIPTION, }\DataTypeTok{data =}\NormalTok{ master.file, }\DataTypeTok{family =} \StringTok{"binomial"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in eval(family$initialize): non-integer #successes in a binomial glm!
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model.esl <-}\StringTok{ }\KeywordTok{glm}\NormalTok{(MATRICULANTS }\OperatorTok{/}\StringTok{ }\NormalTok{POTENTIAL.MATRICULANTS }\OperatorTok{~}\StringTok{ }\NormalTok{AP.PARTICIPATION.RATE }\OperatorTok{+}\StringTok{ }\NormalTok{SAT.PARTICIPATION.RATE }\OperatorTok{+}\StringTok{ }\NormalTok{SAT.MATH }\OperatorTok{+}\StringTok{ }\NormalTok{SAT.ERW }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.BLACK.BROWN }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.WHITE }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.GT }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.ESL }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.DISADV }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.SPED }\OperatorTok{+}\StringTok{ }\NormalTok{DESCRIPTION, }\DataTypeTok{data =}\NormalTok{ master.file, }\DataTypeTok{family =} \StringTok{"binomial"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in eval(family$initialize): non-integer #successes in a binomial glm!
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model.lep <-}\StringTok{ }\KeywordTok{glm}\NormalTok{(MATRICULANTS }\OperatorTok{/}\StringTok{ }\NormalTok{POTENTIAL.MATRICULANTS }\OperatorTok{~}\StringTok{ }\NormalTok{AP.PARTICIPATION.RATE }\OperatorTok{+}\StringTok{ }\NormalTok{SAT.PARTICIPATION.RATE }\OperatorTok{+}\StringTok{ }\NormalTok{SAT.MATH }\OperatorTok{+}\StringTok{ }\NormalTok{SAT.ERW }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.BLACK.BROWN }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.WHITE }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.GT }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.LEP }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.DISADV }\OperatorTok{+}\StringTok{ }\NormalTok{PERCENT.SPED }\OperatorTok{+}\StringTok{ }\NormalTok{DESCRIPTION, }\DataTypeTok{data =}\NormalTok{ master.file, }\DataTypeTok{family =} \StringTok{"binomial"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in eval(family$initialize): non-integer #successes in a binomial glm!
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(model.bil)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = MATRICULANTS/POTENTIAL.MATRICULANTS ~ AP.PARTICIPATION.RATE + 
+##     SAT.PARTICIPATION.RATE + SAT.MATH + SAT.ERW + PERCENT.BLACK.BROWN + 
+##     PERCENT.WHITE + PERCENT.GT + PERCENT.BIL + PERCENT.DISADV + 
+##     PERCENT.SPED + DESCRIPTION, family = "binomial", data = master.file)
+## 
+## Deviance Residuals: 
+##      Min        1Q    Median        3Q       Max  
+## -1.04745  -0.15992   0.00528   0.15787   1.23978  
+## 
+## Coefficients:
+##                                           Estimate Std. Error z value Pr(>|z|)
+## (Intercept)                              -2.433247   0.747651  -3.255 0.001136
+## AP.PARTICIPATION.RATE                     0.613962   0.198354   3.095 0.001966
+## SAT.PARTICIPATION.RATE                    0.903332   0.120023   7.526 5.22e-14
+## SAT.MATH                                  0.004789   0.001447   3.310 0.000932
+## SAT.ERW                                  -0.001917   0.001264  -1.516 0.129411
+## PERCENT.BLACK.BROWN                       1.029022   0.591939   1.738 0.082142
+## PERCENT.WHITE                             0.603166   0.600616   1.004 0.315260
+## PERCENT.GT                                1.083947   0.453745   2.389 0.016899
+## PERCENT.BIL                              -7.350031   1.406975  -5.224 1.75e-07
+## PERCENT.DISADV                           -0.450243   0.217940  -2.066 0.038838
+## PERCENT.SPED                             -3.260279   0.823428  -3.959 7.51e-05
+## DESCRIPTIONINDEPENDENT TOWN               0.207958   0.162417   1.280 0.200408
+## DESCRIPTIONMAJOR SUBURBAN                -0.073262   0.122756  -0.597 0.550636
+## DESCRIPTIONMAJOR URBAN                   -0.524027   0.125049  -4.191 2.78e-05
+## DESCRIPTIONNON-METROPOLITAN FAST GROWING  0.329247   0.266528   1.235 0.216713
+## DESCRIPTIONNON-METROPOLITAN STABLE        0.385027   0.136419   2.822 0.004767
+## DESCRIPTIONOTHER CENTRAL CITY             0.050886   0.136911   0.372 0.710137
+## DESCRIPTIONOTHER CENTRAL CITY SUBURBAN    0.248418   0.131778   1.885 0.059412
+## DESCRIPTIONRURAL                          0.664463   0.137997   4.815 1.47e-06
+##                                             
+## (Intercept)                              ** 
+## AP.PARTICIPATION.RATE                    ** 
+## SAT.PARTICIPATION.RATE                   ***
+## SAT.MATH                                 ***
+## SAT.ERW                                     
+## PERCENT.BLACK.BROWN                      .  
+## PERCENT.WHITE                               
+## PERCENT.GT                               *  
+## PERCENT.BIL                              ***
+## PERCENT.DISADV                           *  
+## PERCENT.SPED                             ***
+## DESCRIPTIONINDEPENDENT TOWN                 
+## DESCRIPTIONMAJOR SUBURBAN                   
+## DESCRIPTIONMAJOR URBAN                   ***
+## DESCRIPTIONNON-METROPOLITAN FAST GROWING    
+## DESCRIPTIONNON-METROPOLITAN STABLE       ** 
+## DESCRIPTIONOTHER CENTRAL CITY               
+## DESCRIPTIONOTHER CENTRAL CITY SUBURBAN   .  
+## DESCRIPTIONRURAL                         ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 834.14  on 5743  degrees of freedom
+## Residual deviance: 417.49  on 5725  degrees of freedom
+##   (3 observations deleted due to missingness)
+## AIC: 6746.9
+## 
+## Number of Fisher Scoring iterations: 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(model.esl)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = MATRICULANTS/POTENTIAL.MATRICULANTS ~ AP.PARTICIPATION.RATE + 
+##     SAT.PARTICIPATION.RATE + SAT.MATH + SAT.ERW + PERCENT.BLACK.BROWN + 
+##     PERCENT.WHITE + PERCENT.GT + PERCENT.ESL + PERCENT.DISADV + 
+##     PERCENT.SPED + DESCRIPTION, family = "binomial", data = master.file)
+## 
+## Deviance Residuals: 
+##      Min        1Q    Median        3Q       Max  
+## -0.98172  -0.16327   0.01319   0.17479   1.24755  
+## 
+## Coefficients:
+##                                           Estimate Std. Error z value Pr(>|z|)
+## (Intercept)                              -2.605551   0.737703  -3.532 0.000412
+## AP.PARTICIPATION.RATE                     0.700650   0.198181   3.535 0.000407
+## SAT.PARTICIPATION.RATE                    1.005856   0.117854   8.535  < 2e-16
+## SAT.MATH                                  0.004786   0.001440   3.324 0.000887
+## SAT.ERW                                  -0.002037   0.001262  -1.613 0.106670
+## PERCENT.BLACK.BROWN                       1.213457   0.581315   2.087 0.036849
+## PERCENT.WHITE                             0.656481   0.591097   1.111 0.266734
+## PERCENT.GT                                0.835303   0.443980   1.881 0.059918
+## PERCENT.ESL                              -0.338427   0.353891  -0.956 0.338919
+## PERCENT.DISADV                           -0.549759   0.222576  -2.470 0.013512
+## PERCENT.SPED                             -3.869692   0.807050  -4.795 1.63e-06
+## DESCRIPTIONINDEPENDENT TOWN               0.351755   0.161072   2.184 0.028974
+## DESCRIPTIONMAJOR SUBURBAN                 0.028489   0.121225   0.235 0.814198
+## DESCRIPTIONMAJOR URBAN                   -0.525696   0.124063  -4.237 2.26e-05
+## DESCRIPTIONNON-METROPOLITAN FAST GROWING  0.442317   0.266867   1.657 0.097430
+## DESCRIPTIONNON-METROPOLITAN STABLE        0.523741   0.135788   3.857 0.000115
+## DESCRIPTIONOTHER CENTRAL CITY             0.170303   0.135602   1.256 0.209150
+## DESCRIPTIONOTHER CENTRAL CITY SUBURBAN    0.381086   0.129859   2.935 0.003340
+## DESCRIPTIONRURAL                          0.750491   0.138139   5.433 5.55e-08
+##                                             
+## (Intercept)                              ***
+## AP.PARTICIPATION.RATE                    ***
+## SAT.PARTICIPATION.RATE                   ***
+## SAT.MATH                                 ***
+## SAT.ERW                                     
+## PERCENT.BLACK.BROWN                      *  
+## PERCENT.WHITE                               
+## PERCENT.GT                               .  
+## PERCENT.ESL                                 
+## PERCENT.DISADV                           *  
+## PERCENT.SPED                             ***
+## DESCRIPTIONINDEPENDENT TOWN              *  
+## DESCRIPTIONMAJOR SUBURBAN                   
+## DESCRIPTIONMAJOR URBAN                   ***
+## DESCRIPTIONNON-METROPOLITAN FAST GROWING .  
+## DESCRIPTIONNON-METROPOLITAN STABLE       ***
+## DESCRIPTIONOTHER CENTRAL CITY               
+## DESCRIPTIONOTHER CENTRAL CITY SUBURBAN   ** 
+## DESCRIPTIONRURAL                         ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 834.14  on 5743  degrees of freedom
+## Residual deviance: 449.76  on 5725  degrees of freedom
+##   (3 observations deleted due to missingness)
+## AIC: 6783.2
+## 
+## Number of Fisher Scoring iterations: 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(model.lep)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = MATRICULANTS/POTENTIAL.MATRICULANTS ~ AP.PARTICIPATION.RATE + 
+##     SAT.PARTICIPATION.RATE + SAT.MATH + SAT.ERW + PERCENT.BLACK.BROWN + 
+##     PERCENT.WHITE + PERCENT.GT + PERCENT.LEP + PERCENT.DISADV + 
+##     PERCENT.SPED + DESCRIPTION, family = "binomial", data = master.file)
+## 
+## Deviance Residuals: 
+##      Min        1Q    Median        3Q       Max  
+## -0.98208  -0.16287   0.01381   0.17520   1.24865  
+## 
+## Coefficients:
+##                                           Estimate Std. Error z value Pr(>|z|)
+## (Intercept)                              -2.608986   0.737595  -3.537 0.000404
+## AP.PARTICIPATION.RATE                     0.698117   0.198170   3.523 0.000427
+## SAT.PARTICIPATION.RATE                    1.008212   0.117833   8.556  < 2e-16
+## SAT.MATH                                  0.004786   0.001440   3.323 0.000889
+## SAT.ERW                                  -0.002036   0.001263  -1.613 0.106843
+## PERCENT.BLACK.BROWN                       1.216045   0.581173   2.092 0.036403
+## PERCENT.WHITE                             0.660673   0.590914   1.118 0.263544
+## PERCENT.GT                                0.840124   0.444222   1.891 0.058594
+## PERCENT.LEP                              -0.272170   0.344592  -0.790 0.429626
+## PERCENT.DISADV                           -0.557728   0.223211  -2.499 0.012466
+## PERCENT.SPED                             -3.871969   0.807409  -4.796 1.62e-06
+## DESCRIPTIONINDEPENDENT TOWN               0.352982   0.161447   2.186 0.028789
+## DESCRIPTIONMAJOR SUBURBAN                 0.027913   0.121502   0.230 0.818302
+## DESCRIPTIONMAJOR URBAN                   -0.527064   0.124110  -4.247 2.17e-05
+## DESCRIPTIONNON-METROPOLITAN FAST GROWING  0.442357   0.267034   1.657 0.097609
+## DESCRIPTIONNON-METROPOLITAN STABLE        0.525549   0.136279   3.856 0.000115
+## DESCRIPTIONOTHER CENTRAL CITY             0.170224   0.135962   1.252 0.210570
+## DESCRIPTIONOTHER CENTRAL CITY SUBURBAN    0.380908   0.130207   2.925 0.003440
+## DESCRIPTIONRURAL                          0.752039   0.138471   5.431 5.60e-08
+##                                             
+## (Intercept)                              ***
+## AP.PARTICIPATION.RATE                    ***
+## SAT.PARTICIPATION.RATE                   ***
+## SAT.MATH                                 ***
+## SAT.ERW                                     
+## PERCENT.BLACK.BROWN                      *  
+## PERCENT.WHITE                               
+## PERCENT.GT                               .  
+## PERCENT.LEP                                 
+## PERCENT.DISADV                           *  
+## PERCENT.SPED                             ***
+## DESCRIPTIONINDEPENDENT TOWN              *  
+## DESCRIPTIONMAJOR SUBURBAN                   
+## DESCRIPTIONMAJOR URBAN                   ***
+## DESCRIPTIONNON-METROPOLITAN FAST GROWING .  
+## DESCRIPTIONNON-METROPOLITAN STABLE       ***
+## DESCRIPTIONOTHER CENTRAL CITY               
+## DESCRIPTIONOTHER CENTRAL CITY SUBURBAN   ** 
+## DESCRIPTIONRURAL                         ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 834.14  on 5743  degrees of freedom
+## Residual deviance: 450.06  on 5725  degrees of freedom
+##   (3 observations deleted due to missingness)
+## AIC: 6783.5
+## 
+## Number of Fisher Scoring iterations: 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{campuses}\FloatTok{.2018}\NormalTok{ <-}\StringTok{ }\NormalTok{master.file[}\KeywordTok{which}\NormalTok{(master.file}\OperatorTok{$}\NormalTok{YEAR }\OperatorTok{==}\StringTok{ }\DecValTok{2018}\NormalTok{),]}
+\NormalTok{campuses}\FloatTok{.2018}\OperatorTok{$}\NormalTok{PREDICTED <-}\StringTok{ }\KeywordTok{predict}\NormalTok{(model.bil, campuses}\FloatTok{.2018}\NormalTok{, }\DataTypeTok{type =} \StringTok{'response'}\NormalTok{)}
+\NormalTok{campuses}\FloatTok{.2018}\OperatorTok{$}\NormalTok{DIFFERENCE <-}\StringTok{ }\NormalTok{campuses}\FloatTok{.2018}\OperatorTok{$}\NormalTok{MATRICULATION.RATE }\OperatorTok{-}\StringTok{ }\NormalTok{campuses}\FloatTok{.2018}\OperatorTok{$}\NormalTok{PREDICTED}
+
+\KeywordTok{kable}\NormalTok{(campuses}\FloatTok{.2018}\NormalTok{[}\KeywordTok{c}\NormalTok{(}\StringTok{'CAMPUS.NAME.y'}\NormalTok{,}\StringTok{'PREDICTED'}\NormalTok{,}\StringTok{'MATRICULATION.RATE'}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}llrr@{}}
+\toprule
+& CAMPUS.NAME.y & PREDICTED & MATRICULATION.RATE\tabularnewline
+\midrule
+\endhead
+4 & Cayuga H S & 0.5182841 & 0.3846154\tabularnewline
+8 & Elkhart H S & 0.4678492 & 0.4729730\tabularnewline
+12 & Frankston H S & 0.6102801 & 0.4912281\tabularnewline
+18 & Palestine H S & 0.4938537 & 0.4278846\tabularnewline
+22 & Westwood H S & 0.4794073 & 0.4356436\tabularnewline
+24 & Slocum H S & 0.4516490 & 0.4814815\tabularnewline
+28 & Andrews H S & 0.5459216 & 0.4684211\tabularnewline
+32 & Pineywoods Community Academy H S & 0.4578611 &
+0.5111111\tabularnewline
+36 & Hudson H S & 0.6402825 & 0.6270270\tabularnewline
+40 & Lufkin H S & 0.4262771 & 0.5717256\tabularnewline
+44 & Huntington H S & 0.5526848 & 0.4166667\tabularnewline
+48 & Diboll H S & 0.5517782 & 0.5614035\tabularnewline
+51 & Zavalla H S & 0.3635645 & 0.2592593\tabularnewline
+55 & Central H S & 0.4995518 & 0.4807692\tabularnewline
+59 & Rockport-Fulton H S & 0.4627800 & 0.4926108\tabularnewline
+63 & Archer City H S & 0.5867969 & 0.7096774\tabularnewline
+67 & Holliday H S & 0.5204177 & 0.6323529\tabularnewline
+71 & Windthorst H S & 0.6119102 & 0.6153846\tabularnewline
+77 & Charlotte H S & 0.4585078 & 0.3076923\tabularnewline
+81 & Jourdanton H S & 0.4804677 & 0.4673913\tabularnewline
+85 & Lytle H S & 0.5463922 & 0.4285714\tabularnewline
+89 & Pleasanton H S & 0.5569340 & 0.4476190\tabularnewline
+93 & Poteet H S & 0.5284734 & 0.4310345\tabularnewline
+97 & Bellville H S & 0.5644634 & 0.5244755\tabularnewline
+101 & Sealy H S & 0.5415613 & 0.5176991\tabularnewline
+105 & Brazos H S & 0.6602183 & 0.5925926\tabularnewline
+109 & Muleshoe H S & 0.4725040 & 0.4487179\tabularnewline
+114 & Bandera H S & 0.4590276 & 0.4041096\tabularnewline
+121 & Cedar Creek H S & 0.5765483 & 0.4756944\tabularnewline
+122 & Bastrop H S & 0.5069262 & 0.3890909\tabularnewline
+123 & Colorado River Collegiate Academy & 0.6641161 &
+0.4883721\tabularnewline
+128 & Elgin H S & 0.6863838 & 0.4313725\tabularnewline
+129 & Phoenix H S & 0.2871239 & 0.0454545\tabularnewline
+133 & Smithville H S & 0.5402946 & 0.4666667\tabularnewline
+137 & Seymour H S & 0.4385756 & 0.6666667\tabularnewline
+141 & A C Jones H S & 0.4337048 & 0.4488889\tabularnewline
+145 & Pettus Secondary & 0.5201674 & 0.5294118\tabularnewline
+149 & Skidmore-Tynan H S & 0.5604772 & 0.6349206\tabularnewline
+170 & Richard Milburn Academy Houston (S & 0.3028372 &
+0.0652174\tabularnewline
+171 & Richard Milburn Academy Corpus Chr & 0.3289554 &
+0.0952381\tabularnewline
+172 & Richard Milburn Academy Odessa & 0.3892824 &
+0.1061947\tabularnewline
+173 & Richard Milburn Alter H S (Killeen & 0.2620514 &
+0.1276596\tabularnewline
+174 & Richard Milburn Academy Fort Worth & 0.3117956 &
+0.1228070\tabularnewline
+181 & Gateway Tech H S & 0.3289168 & 0.3076923\tabularnewline
+182 & Gateway College Preparatory School & 0.6794757 &
+0.8181818\tabularnewline
+186 & Academy H S & 0.5504444 & 0.5742574\tabularnewline
+194 & Belton New Tech H S At Waskow & 0.6160928 &
+0.5360000\tabularnewline
+195 & Belton H S & 0.5263329 & 0.4817629\tabularnewline
+199 & Holland H S & 0.6722671 & 0.5087719\tabularnewline
+215 & Pathways Academic Campus & 0.3280830 & 0.1937173\tabularnewline
+216 & Killeen H S & 0.4298589 & 0.3708333\tabularnewline
+217 & Harker Heights H S & 0.5304175 & 0.5598527\tabularnewline
+218 & Robert M Shoemaker H S & 0.4511636 & 0.4225352\tabularnewline
+219 & C E Ellison H S & 0.4752196 & 0.4879852\tabularnewline
+223 & Rogers H S & 0.5990285 & 0.6063830\tabularnewline
+227 & Salado H S & 0.6744554 & 0.6814159\tabularnewline
+233 & Temple H S & 0.5251085 & 0.4909091\tabularnewline
+237 & Troy H S & 0.4916656 & 0.4705882\tabularnewline
+241 & Corpus Christi College Prep H S & 0.3017852 &
+0.6153846\tabularnewline
+242 & Cesar E Chavez Academy & 0.3255520 & 0.0606061\tabularnewline
+243 & George Gervin Academy & 0.1956417 & 0.0740741\tabularnewline
+244 & Frank L Madla Early College H S & 0.6350557 &
+0.6415094\tabularnewline
+246 & Milton B Lee Academy Of Science \& & 0.4285871 &
+0.4137931\tabularnewline
+250 & Positive Solutions Charter & 0.2957303 & 0.0344828\tabularnewline
+255 & Jubilee San Antonio & 0.4955318 & 0.4166667\tabularnewline
+256 & Jubilee Brownsville & 0.5142552 & 0.9090909\tabularnewline
+260 & Kipp University Prep H S & 0.5249068 & 0.6953125\tabularnewline
+264 & School Of Science And Technology & 0.6526570 &
+0.5230769\tabularnewline
+272 & Harmony School Of Innovation - Bro & 0.5503320 &
+0.9000000\tabularnewline
+273 & Harmony School Of Excellence - Lar & 0.6135785 &
+0.8222222\tabularnewline
+274 & Harmony Science Acad (San Antonio) & 0.6177328 &
+0.6233766\tabularnewline
+278 & Brooks Academy Of Science And Engi & 0.5578544 &
+0.4255319\tabularnewline
+281 & Henry Ford Academy Alameda School & 0.3537926 &
+0.4000000\tabularnewline
+282 & Basis San Antonio- Shavano Campus & 0.7938210 &
+0.7586207\tabularnewline
+283 & Great Hearts Monte Vista North & 0.6558348 &
+0.6470588\tabularnewline
+287 & Alamo Heights H S & 0.6896075 & 0.6054054\tabularnewline
+297 & Frank M Tejeda Academy & 0.2421378 & 0.0666667\tabularnewline
+298 & Harlandale ISD Stem Echs-Alamo Col & 0.6867266 &
+0.6250000\tabularnewline
+299 & McCollum H S & 0.5313508 & 0.6057971\tabularnewline
+300 & Harlandale H S & 0.5638729 & 0.5982659\tabularnewline
+307 & John F Kennedy H S & 0.5249338 & 0.3775934\tabularnewline
+308 & Memorial H S & 0.5464418 & 0.4346290\tabularnewline
+312 & Randolph H S & 0.7077647 & 0.6460177\tabularnewline
+346 & Burbank H S & 0.4169811 & 0.4216028\tabularnewline
+347 & Young Women's Leadership Academy & 0.7861965 &
+0.8809524\tabularnewline
+348 & Houston H S & 0.3743687 & 0.3684211\tabularnewline
+349 & Fox Technical H S & 0.6302514 & 0.6582278\tabularnewline
+350 & Brackenridge H S & 0.4711395 & 0.4231806\tabularnewline
+351 & Jefferson H S & 0.4026953 & 0.4428152\tabularnewline
+352 & Lanier H S & 0.3939894 & 0.4141791\tabularnewline
+353 & Edison H S & 0.4441618 & 0.4431818\tabularnewline
+354 & Highlands H S & 0.3941609 & 0.4088050\tabularnewline
+355 & Travis Early College H S & 0.6450617 & 0.8421053\tabularnewline
+356 & St Philip's College Early College & 0.5135099 &
+0.5370370\tabularnewline
+357 & Cooper Academy At Navarro & 0.2865994 & 0.1084337\tabularnewline
+361 & South San Antonio H S & 0.5624468 & 0.4272031\tabularnewline
+365 & Somerset H S & 0.6538482 & 0.4860558\tabularnewline
+393 & Lee H S & 0.4283804 & 0.4313346\tabularnewline
+394 & Churchill H S & 0.4814244 & 0.6148148\tabularnewline
+395 & Reagan H S & 0.5926755 & 0.6683292\tabularnewline
+396 & Macarthur H S & 0.3682752 & 0.5067437\tabularnewline
+397 & Johnson H S & 0.5478396 & 0.6149660\tabularnewline
+398 & International School Of America & 0.6697972 &
+0.6090909\tabularnewline
+399 & Roosevelt H S & 0.3872558 & 0.4299363\tabularnewline
+400 & Academy Of Creative Ed & 0.3175380 & 0.0789474\tabularnewline
+401 & Madison H S & 0.4092573 & 0.4617564\tabularnewline
+405 & East Central H S & 0.4515685 & 0.4031339\tabularnewline
+412 & Southwest Academy & 0.2471318 & 0.1013514\tabularnewline
+413 & Southwest H S & 0.5086419 & 0.5006766\tabularnewline
+417 & Virginia Allred Stacey Jr/Sr H S & 0.6871583 &
+0.3333333\tabularnewline
+421 & Robert G Cole Middle/High School & 0.6657515 &
+0.5612245\tabularnewline
+458 & Holmes H S & 0.4437538 & 0.4185249\tabularnewline
+459 & Brennan H S & 0.5095903 & 0.5459941\tabularnewline
+460 & Warren H S & 0.5236237 & 0.5213549\tabularnewline
+461 & Marshall H S & 0.4762310 & 0.5231317\tabularnewline
+462 & Clark H S & 0.5388185 & 0.5614618\tabularnewline
+463 & Taft H S & 0.5065364 & 0.5079365\tabularnewline
+464 & Stevens H S & 0.4536071 & 0.4667747\tabularnewline
+465 & Brandeis H S & 0.5724125 & 0.6566164\tabularnewline
+466 & Jay H S & 0.4557062 & 0.4556522\tabularnewline
+467 & O'Connor H S & 0.5589757 & 0.6302414\tabularnewline
+468 & Health Careers H S & 0.7698524 & 0.7849462\tabularnewline
+469 & Chavez Excel Academy & 0.2075634 & 0.2285714\tabularnewline
+482 & Judson Learning Acad & 0.3706360 & 0.1546392\tabularnewline
+483 & Karen Wagner H S & 0.5127309 & 0.3670330\tabularnewline
+484 & Judson Early College Academy & 0.7197264 &
+0.7800000\tabularnewline
+485 & Judson H S & 0.5485534 & 0.3895131\tabularnewline
+489 & Southside H S & 0.5489109 & 0.3855072\tabularnewline
+493 & Lyndon B Johnson H S & 0.6316186 & 0.5072464\tabularnewline
+497 & Blanco H S & 0.5524881 & 0.5151515\tabularnewline
+501 & Clifton H S & 0.4790662 & 0.5375000\tabularnewline
+505 & Meridian H S & 0.5118467 & 0.6785714\tabularnewline
+509 & Valley Mills H S & 0.4966557 & 0.5714286\tabularnewline
+513 & Hooks H S & 0.4260804 & 0.2894737\tabularnewline
+516 & Maud School & 0.4631061 & 0.3793103\tabularnewline
+520 & New Boston H S & 0.3990269 & 0.3578947\tabularnewline
+524 & Redwater H S & 0.4459387 & 0.4047619\tabularnewline
+529 & Texas H S & 0.4969999 & 0.3858696\tabularnewline
+533 & Liberty-Eylau H S & 0.3836259 & 0.3705882\tabularnewline
+539 & Pleasant Grove H S & 0.5522746 & 0.4295775\tabularnewline
+549 & Assets & 0.2490319 & 0.3255814\tabularnewline
+550 & Shadow Creek H S & 0.5733687 & 0.5343284\tabularnewline
+551 & Alvin H S & 0.4385005 & 0.5050676\tabularnewline
+552 & Manvel H S & 0.4671281 & 0.5424431\tabularnewline
+556 & Angleton H S & 0.5280189 & 0.4864865\tabularnewline
+560 & Danbury H S & 0.6532553 & 0.5581395\tabularnewline
+568 & Brazosport H S & 0.4012099 & 0.4318182\tabularnewline
+569 & Brazoswood H S & 0.5310566 & 0.6205534\tabularnewline
+573 & Sweeny H S & 0.5249113 & 0.5751634\tabularnewline
+577 & Columbia H S & 0.4530652 & 0.4878049\tabularnewline
+587 & Robert Turner College And Career H & 0.5260765 &
+0.6104418\tabularnewline
+588 & Pearland H S & 0.5615942 & 0.6331445\tabularnewline
+589 & Glenda Dawson H S & 0.6886158 & 0.6548043\tabularnewline
+598 & A \& M Cons H S & 0.6518530 & 0.6109726\tabularnewline
+599 & College Station H S & 0.6596440 & 0.6117647\tabularnewline
+610 & Bryan Collegiate H S & 0.7506000 & 0.8354430\tabularnewline
+611 & Travis B Bryan H S & 0.5533880 & 0.4503464\tabularnewline
+612 & James Earl Rudder H S & 0.4585198 & 0.4092219\tabularnewline
+616 & Alpine H S & 0.6004743 & 0.4155844\tabularnewline
+620 & Falfurrias H S & 0.5813458 & 0.4455446\tabularnewline
+624 & Bangs H S & 0.4618760 & 0.4383562\tabularnewline
+628 & Brownwood H S & 0.4897144 & 0.4427083\tabularnewline
+629 & May H S & 0.4610889 & 0.4615385\tabularnewline
+633 & Early H S & 0.5809968 & 0.5543478\tabularnewline
+637 & Caldwell H S & 0.5694291 & 0.5426357\tabularnewline
+639 & Somerville H S & 0.5370651 & 0.2812500\tabularnewline
+643 & Snook Secondary & 0.5509230 & 0.4761905\tabularnewline
+650 & Quest H S & 0.1376659 & 0.1132075\tabularnewline
+651 & Burnet H S & 0.5999555 & 0.5284091\tabularnewline
+656 & Falls Career H S & 0.2107071 & 0.1315789\tabularnewline
+657 & Marble Falls H S & 0.5115989 & 0.4279661\tabularnewline
+661 & Lockhart H S & 0.5917275 & 0.3256579\tabularnewline
+665 & Luling H S & 0.4341375 & 0.3086420\tabularnewline
+669 & Calhoun H S & 0.5247954 & 0.4375000\tabularnewline
+673 & Clyde H S & 0.4113771 & 0.5517241\tabularnewline
+698 & Pace Early College H S & 0.5096917 & 0.5918803\tabularnewline
+699 & Porter Early College H S & 0.4838585 & 0.4934383\tabularnewline
+700 & Lincoln Park Sch & 0.3358614 & 0.1320755\tabularnewline
+701 & Brownsville Learning Acad H S & 0.3127603 &
+0.1413043\tabularnewline
+702 & Brownsville Early College H S & 0.7575378 &
+0.9400000\tabularnewline
+703 & Veterans Memorial Early College H & 0.6053094 &
+0.7176471\tabularnewline
+704 & Lopez Early College H S & 0.4797307 & 0.5163399\tabularnewline
+705 & Hanna Early College H S & 0.5792904 & 0.7036395\tabularnewline
+706 & Rivera Early College H S & 0.5083842 & 0.5711382\tabularnewline
+718 & Keys Acad & 0.3973160 & 0.1000000\tabularnewline
+719 & Harlingen School Of Health Profess & 0.7643798 &
+0.8904110\tabularnewline
+720 & Harlingen H S & 0.4932649 & 0.4970060\tabularnewline
+721 & Harlingen H S - South & 0.5795822 & 0.5540541\tabularnewline
+722 & Early College H S & 0.7031814 & 0.7820513\tabularnewline
+726 & La Feria H S & 0.5522030 & 0.6350000\tabularnewline
+730 & Los Fresnos H S & 0.5792452 & 0.5651558\tabularnewline
+734 & Port Isabel H S & 0.5270166 & 0.4883721\tabularnewline
+738 & Rio Hondo H S & 0.6414823 & 0.5804196\tabularnewline
+742 & San Benito H S & 0.5446978 & 0.5481611\tabularnewline
+746 & Santa Maria H S & 0.7157108 & 0.4545455\tabularnewline
+748 & Santa Rosa H S & 0.5599333 & 0.6865672\tabularnewline
+761 & South Texas Business Education \& T & 0.7760794 &
+0.7973856\tabularnewline
+762 & South Texas H S For Health Profess & 0.8061555 &
+0.8571429\tabularnewline
+763 & The Science Academy Of South Texas & 0.8759893 &
+0.8169935\tabularnewline
+764 & South Texas Academy For Medical Pr & 0.8062306 &
+0.8333333\tabularnewline
+768 & Pittsburg H S & 0.4652853 & 0.5686275\tabularnewline
+771 & Panhandle H S & 0.5383666 & 0.4423077\tabularnewline
+775 & Atlanta H S & 0.4880965 & 0.3603604\tabularnewline
+779 & Hughes Springs H S & 0.4205963 & 0.4117647\tabularnewline
+785 & Queen City H S & 0.3862600 & 0.2575758\tabularnewline
+789 & Dimmitt H S & 0.4932381 & 0.4090909\tabularnewline
+793 & Anahuac H S & 0.4632826 & 0.4803922\tabularnewline
+797 & Barbers Hill H S & 0.5889619 & 0.6631854\tabularnewline
+801 & East Chambers H S & 0.4590326 & 0.5119048\tabularnewline
+805 & Alto H S & 0.4838235 & 0.4285714\tabularnewline
+809 & Jacksonville H S & 0.3977853 & 0.4264706\tabularnewline
+813 & Rusk H S & 0.4241271 & 0.5094340\tabularnewline
+816 & New Summerfield School & 0.4991952 & 0.5714286\tabularnewline
+819 & Childress H S & 0.4398116 & 0.5000000\tabularnewline
+823 & Henrietta H S & 0.4958140 & 0.5428571\tabularnewline
+827 & Petrolia Junior High/High School & 0.4712222 &
+0.3055556\tabularnewline
+832 & Coleman H S & 0.5111476 & 0.5645161\tabularnewline
+834 & Imagine International Academy Of N & 0.6865715 &
+0.4062500\tabularnewline
+842 & Anna H S & 0.5221262 & 0.4797980\tabularnewline
+846 & Celina H S & 0.5734866 & 0.4873418\tabularnewline
+850 & Farmersville H S & 0.4898265 & 0.4727273\tabularnewline
+871 & Liberty H S & 0.7215855 & 0.6390041\tabularnewline
+872 & Lone Star H S & 0.6034125 & 0.5391924\tabularnewline
+873 & Heritage H S & 0.6297329 & 0.6599190\tabularnewline
+874 & Reedy H S & 0.7065099 & 0.5633075\tabularnewline
+875 & Centennial H S & 0.6761880 & 0.6247241\tabularnewline
+876 & Wakeland H S & 0.6902313 & 0.5629291\tabularnewline
+877 & Frisco H S & 0.6517044 & 0.5500000\tabularnewline
+878 & Independence H S & 0.6663113 & 0.5759637\tabularnewline
+888 & McKinney H S & 0.6709687 & 0.5795796\tabularnewline
+889 & McKinney North H S & 0.6478056 & 0.4890656\tabularnewline
+890 & McKinney Boyd H S & 0.7327320 & 0.5306452\tabularnewline
+894 & Melissa H S & 0.6158475 & 0.5081081\tabularnewline
+906 & Plano ISD Academy H S & 0.6482453 & 0.5730337\tabularnewline
+913 & Princeton H S & 0.4955698 & 0.3859649\tabularnewline
+917 & Prosper H S & 0.6647333 & 0.5094044\tabularnewline
+927 & Achieve Academy & 0.3250236 & 0.1237113\tabularnewline
+928 & Wylie H S & 0.6840472 & 0.6134454\tabularnewline
+929 & Wylie East H S & 0.6354503 & 0.6222826\tabularnewline
+933 & Blue Ridge H S & 0.4626728 & 0.5102041\tabularnewline
+937 & Community H S & 0.6246503 & 0.5080645\tabularnewline
+941 & Lovejoy H S & 0.7937450 & 0.4733894\tabularnewline
+944 & Wellington H S & 0.4701229 & 0.6666667\tabularnewline
+948 & Columbus H S & 0.5786953 & 0.5283019\tabularnewline
+952 & Rice H S & 0.4253153 & 0.6621622\tabularnewline
+956 & Weimar H S & 0.6103297 & 0.7346939\tabularnewline
+960 & New Braunfels H S & 0.5873816 & 0.5116697\tabularnewline
+961 & The NBISD Learning Center & 0.2945852 & 0.0750000\tabularnewline
+976 & Canyon Lake H S & 0.5232974 & 0.3461538\tabularnewline
+977 & Canyon H S & 0.6093312 & 0.4954628\tabularnewline
+978 & Memorial Early College H S With St & 0.6301558 &
+0.6200000\tabularnewline
+979 & Comal Academy & 0.1523821 & 0.1208791\tabularnewline
+980 & Smithson Valley H S & 0.6680316 & 0.5613748\tabularnewline
+984 & Comanche H S & 0.5314291 & 0.6612903\tabularnewline
+988 & De Leon H S & 0.5924580 & 0.6904762\tabularnewline
+992 & Gainesville H S & 0.4189518 & 0.5066667\tabularnewline
+996 & Muenster H S & 0.6320825 & 0.7317073\tabularnewline
+1000 & Valley View H S & 0.6091749 & 0.5454545\tabularnewline
+1004 & Callisburg H S & 0.4601623 & 0.5263158\tabularnewline
+1008 & Era School & 0.5599478 & 0.7027027\tabularnewline
+1012 & Lindsay H S & 0.6551445 & 0.7500000\tabularnewline
+1016 & Gatesville H S & 0.4064903 & 0.4350000\tabularnewline
+1017 & Jonesboro School & 0.4027667 & 0.4230769\tabularnewline
+1023 & Crossroads H S & 0.2671939 & 0.0634921\tabularnewline
+1024 & Copperas Cove H S & 0.5346625 & 0.4432314\tabularnewline
+1028 & Crane H S & 0.4314326 & 0.5972222\tabularnewline
+1032 & Ozona H S & 0.5661287 & 0.4878049\tabularnewline
+1036 & Ralls H S & 0.4271268 & 0.5666667\tabularnewline
+1041 & Dalhart H S & 0.4921061 & 0.4666667\tabularnewline
+1056 & Uplift Infinity H S & 0.6142889 & 0.6271186\tabularnewline
+1057 & Uplift Mighty H S & 0.5650854 & 0.6562500\tabularnewline
+1058 & Uplift Education-North Hills Prep & 0.7129018 &
+0.7684211\tabularnewline
+1059 & Uplift Williams Preparatory H S & 0.6777718 &
+0.6962025\tabularnewline
+1060 & Uplift Heights Preparatory H S & 0.4715141 &
+0.7594937\tabularnewline
+1061 & Uplift Summit International H S & 0.7114396 &
+0.5555556\tabularnewline
+1062 & Uplift Luna Preparatory H S & 0.4883694 &
+0.5942029\tabularnewline
+1063 & Uplift Peak Preparatory H S & 0.6185114 &
+0.6619718\tabularnewline
+1064 & Uplift Hampton Preparatory H S & 0.5097673 &
+0.7073171\tabularnewline
+1094 & Garland Can Academy & 0.3464351 & 0.1093750\tabularnewline
+1095 & Fort Worth Can Academy Lancaster A & 0.3545548 &
+0.0677966\tabularnewline
+1096 & Dallas Can Academy - Grant East & 0.2887351 &
+0.1333333\tabularnewline
+1097 & Dallas Can Academy Charter & 0.3057198 & 0.1233766\tabularnewline
+1098 & Austin Can Academy & 0.3457069 & 0.0571429\tabularnewline
+1099 & Dallas Can Academy Charter-Oak Cli & 0.3606236 &
+0.0987124\tabularnewline
+1100 & Houston Can Academy - Southwest & 0.3926608 &
+0.0821918\tabularnewline
+1101 & Dallas Can Academy At Carrollton-F & 0.3318678 &
+0.1166667\tabularnewline
+1102 & Fort Worth Can Academy Westcreek & 0.3284267 &
+0.1386861\tabularnewline
+1103 & Houston Can Academy - North & 0.3503274 &
+0.0825688\tabularnewline
+1104 & Dallas Can Academy At Pleasant Gro & 0.3163777 &
+0.0902778\tabularnewline
+1105 & San Antonio Can Academy & 0.2987695 & 0.1500000\tabularnewline
+1106 & Houston Can Academy - Hobby & 0.3227663 &
+0.1052632\tabularnewline
+1110 & Advantage Academy & 0.4328553 & 0.5714286\tabularnewline
+1117 & Life H S Waxahachie & 0.4407492 & 0.6020408\tabularnewline
+1118 & Life School Oak Cliff & 0.2784397 & 0.5740741\tabularnewline
+1135 & Winfree Academy North Richland Hil & 0.2797728 &
+0.1538462\tabularnewline
+1136 & Winfree Academy Charter School (Le & 0.2761056 &
+0.1777778\tabularnewline
+1137 & Winfree Academy Charter School (Ri & 0.3918345 &
+0.3906250\tabularnewline
+1138 & Winfree Academy Charter School - G & 0.3383910 &
+0.1818182\tabularnewline
+1142 & A+ Secondary School & 0.4999049 & 0.3934426\tabularnewline
+1145 & Inspired Vision Academy Middle & 0.4152058 &
+0.3536585\tabularnewline
+1148 & Gateway Charter Academy - Middle - & 0.3354547 &
+0.5000000\tabularnewline
+1158 & Evolution Academy Beaumont & 0.2940068 & 0.0909091\tabularnewline
+1159 & Evolution Academy Charter School & 0.2958859 &
+0.1321839\tabularnewline
+1160 & Evolution Academy Houston & 0.2771711 & 0.0985915\tabularnewline
+1165 & Richland Collegiate H S Of Math Sc & 0.6881590 &
+0.8760000\tabularnewline
+1168 & Ume Preparatory Academy & 0.6125971 & 0.6969697\tabularnewline
+1169 & Legacy Preparatory Charter Academy & 0.0855802 &
+0.3703704\tabularnewline
+1170 & Village Tech Schools & 0.5438059 & 0.5915493\tabularnewline
+1173 & International Leadership Of Tx-Kel & 0.6492958 &
+0.6129032\tabularnewline
+1174 & International Leadership Of Texas & 0.6605572 &
+0.7115385\tabularnewline
+1175 & International Leadership Of Texas & 0.6200373 &
+0.7241379\tabularnewline
+1192 & Ranchview H S & 0.4456346 & 0.5906736\tabularnewline
+1193 & Early College H S & 0.6550435 & 0.7662338\tabularnewline
+1194 & Turner H S & 0.4960959 & 0.5606061\tabularnewline
+1195 & Creekview H S & 0.5445933 & 0.5889423\tabularnewline
+1196 & Smith H S & 0.5166435 & 0.5642458\tabularnewline
+1203 & Cedar Hill Collegiate H S & 0.6548560 & 0.8300000\tabularnewline
+1204 & Cedar Hill H S & 0.4193203 & 0.5668016\tabularnewline
+1311 & Trinidad Garza Early College At Mt & 0.7256533 &
+0.7653061\tabularnewline
+1312 & Wilmer-Hutchins H S & 0.4014326 & 0.4166667\tabularnewline
+1313 & School Of Business And Management & 0.7336874 &
+0.8000000\tabularnewline
+1314 & W T White H S & 0.4886778 & 0.6125000\tabularnewline
+1315 & James Madison H S & 0.3669091 & 0.5882353\tabularnewline
+1316 & Justin F Kimball H S & 0.4288834 & 0.5288889\tabularnewline
+1317 & Skyline H S & 0.5058834 & 0.5332527\tabularnewline
+1318 & School For The Talented And Gifted & 0.8897268 &
+0.5230769\tabularnewline
+1319 & Franklin D Roosevelt H S & 0.4321588 & 0.3448276\tabularnewline
+1320 & Seagoville H S & 0.4170213 & 0.4492188\tabularnewline
+1321 & School Of Health Professions & 0.7605618 &
+0.7680000\tabularnewline
+1322 & School Of Science And Engineering & 0.8590007 &
+0.6666667\tabularnewline
+1323 & W W Samuell H S & 0.4173375 & 0.4119497\tabularnewline
+1324 & Rosie Sorrells Education And Socia & 0.7150763 &
+0.7283951\tabularnewline
+1325 & Thomas Jefferson H S & 0.4747708 & 0.5833333\tabularnewline
+1326 & Emmett J Conrad H S & 0.3822842 & 0.5714286\tabularnewline
+1327 & David W Carter H S & 0.3973220 & 0.5025907\tabularnewline
+1328 & Bryan Adams H S & 0.4526670 & 0.5614035\tabularnewline
+1329 & Woodrow Wilson H S & 0.4754052 & 0.5407609\tabularnewline
+1330 & A Maceo Smith New Tech H S & 0.5441444 & 0.6477273\tabularnewline
+1331 & Lincoln Humanities/Communications & 0.3890846 &
+0.5510204\tabularnewline
+1332 & Kathlyn Joy Gilliam Collegiate Aca & 0.6363858 &
+0.6835443\tabularnewline
+1333 & South Oak Cliff H S & 0.3620277 & 0.4867257\tabularnewline
+1334 & Barack Obama Male Leadership Aca A & 0.7535044 &
+0.7777778\tabularnewline
+1335 & North Dallas H S & 0.4216851 & 0.5340909\tabularnewline
+1336 & H Grady Spruce H S & 0.4013551 & 0.4797048\tabularnewline
+1337 & Irma Lerma Rangel Young Women's Le & 0.8030592 &
+0.6451613\tabularnewline
+1338 & Hillcrest H S & 0.4832061 & 0.6136364\tabularnewline
+1339 & Booker T Washington Spva Magnet & 0.7055063 &
+0.4028436\tabularnewline
+1340 & L G Pinkston H S & 0.4318119 & 0.5079365\tabularnewline
+1341 & Dr Wright L Lassiter Jr Early Coll & 0.6812258 &
+0.6862745\tabularnewline
+1342 & John Leslie Patton Jr Academic Cen & 0.3021023 &
+0.1486486\tabularnewline
+1343 & Judge Barefoot Sanders Law Magnet & 0.7367663 &
+0.7816092\tabularnewline
+1344 & W H Adamson H S & 0.4423428 & 0.6050725\tabularnewline
+1345 & Sunset H S & 0.3952794 & 0.5330189\tabularnewline
+1346 & Moises E Molina H S & 0.4666510 & 0.6233184\tabularnewline
+1350 & Wings (Where I Now Gain Success) & 0.2072423 &
+0.1041667\tabularnewline
+1351 & Desoto H S \& Isteam3D & 0.5378362 & 0.5672515\tabularnewline
+1357 & Mary E Smithey Pace H S & 0.3080421 & 0.1444444\tabularnewline
+1358 & Duncanville H S & 0.4715989 & 0.5018821\tabularnewline
+1383 & N Garland H S & 0.6250603 & 0.6193772\tabularnewline
+1384 & Lakeview Centennial H S & 0.6129528 & 0.6933045\tabularnewline
+1385 & S Garland H S & 0.5220245 & 0.3509749\tabularnewline
+1386 & Garland H S & 0.6443161 & 0.5298373\tabularnewline
+1387 & Naaman Forest H S & 0.5589468 & 0.5298507\tabularnewline
+1388 & Sachse H S & 0.6107530 & 0.6089744\tabularnewline
+1389 & Memorial Pathway Academy H S & 0.3593385 &
+0.1282051\tabularnewline
+1390 & Rowlett H S & 0.5902553 & 0.5419463\tabularnewline
+1404 & Grand Prairie Fine Arts Academy & 0.7898300 &
+0.6444444\tabularnewline
+1405 & South Grand Prairie H S & 0.5769354 & 0.7052786\tabularnewline
+1406 & John A Dubiski Career H S & 0.6576747 & 0.6752137\tabularnewline
+1407 & Crosswinds H S & 0.3453609 & 0.0849858\tabularnewline
+1408 & Grand Prairie H S & 0.5213796 & 0.5625000\tabularnewline
+1409 & Ywla At Bill Arnold & 0.7039616 & 0.7352941\tabularnewline
+1413 & Highland Park H S & 0.7238604 & 0.3673469\tabularnewline
+1428 & Nimitz H S & 0.5452870 & 0.4334038\tabularnewline
+1429 & Irving H S & 0.5762786 & 0.5010309\tabularnewline
+1430 & Jack E Singley Academy & 0.6675356 & 0.6166220\tabularnewline
+1431 & Macarthur H S & 0.5276147 & 0.5660714\tabularnewline
+1435 & Lancaster H S & 0.4111774 & 0.5227766\tabularnewline
+1454 & West Mesquite H S & 0.4690210 & 0.5125000\tabularnewline
+1455 & North Mesquite H S & 0.4643298 & 0.5379189\tabularnewline
+1456 & Mesquite H S & 0.4636814 & 0.4736842\tabularnewline
+1457 & Poteet H S & 0.4995292 & 0.5481481\tabularnewline
+1458 & Horn H S & 0.4803829 & 0.5664740\tabularnewline
+1459 & Mesquite Academy & 0.2901879 & 0.2241379\tabularnewline
+1472 & Lake Highlands H S & 0.5282188 & 0.5292929\tabularnewline
+1473 & Pearce H S & 0.6407955 & 0.5544355\tabularnewline
+1474 & Berkner H S & 0.4985566 & 0.5740741\tabularnewline
+1475 & Richardson H S & 0.5838339 & 0.5706215\tabularnewline
+1479 & Sunnyvale H S & 0.6717207 & 0.7479675\tabularnewline
+1486 & New Tech H S At Coppell & 0.6415837 & 0.5483871\tabularnewline
+1487 & Coppell H S & 0.7233544 & 0.6637168\tabularnewline
+1491 & Lamesa H S & 0.4983844 & 0.6120690\tabularnewline
+1495 & Hereford H S & 0.4076928 & 0.4218750\tabularnewline
+1499 & Cooper H S & 0.4686175 & 0.4603175\tabularnewline
+1512 & Ryan H S & 0.4901070 & 0.5673575\tabularnewline
+1513 & Ray E Braswell H S & 0.5415803 & 0.5035461\tabularnewline
+1514 & Guyer H S & 0.6104864 & 0.6405959\tabularnewline
+1515 & Denton H S & 0.5364712 & 0.5594595\tabularnewline
+1516 & Fred Moore H S & 0.2305409 & 0.2666667\tabularnewline
+1533 & The Colony H S & 0.4862253 & 0.4686825\tabularnewline
+1534 & Hebron H S & 0.6276342 & 0.6192960\tabularnewline
+1535 & Marcus H S & 0.6328399 & 0.6057441\tabularnewline
+1536 & Flower Mound H S & 0.6789944 & 0.5424107\tabularnewline
+1537 & Learning Ctr & 0.2074491 & 0.1164384\tabularnewline
+1541 & Pilot Point H S & 0.4865556 & 0.5909091\tabularnewline
+1545 & Krum H S & 0.4885854 & 0.5422535\tabularnewline
+1549 & Ponder H S & 0.5383752 & 0.5300000\tabularnewline
+1553 & Aubrey H S & 0.5959125 & 0.4478528\tabularnewline
+1557 & Sanger H S & 0.4908306 & 0.4691358\tabularnewline
+1561 & Argyle H S & 0.6610134 & 0.5863874\tabularnewline
+1569 & V R Eaton H S & 0.6864488 & 0.5420561\tabularnewline
+1570 & Northwest H S & 0.6632276 & 0.4902507\tabularnewline
+1571 & Byron Nelson H S & 0.7449536 & 0.5087719\tabularnewline
+1575 & Lake Dallas H S & 0.5889828 & 0.5627240\tabularnewline
+1579 & Little Elm H S & 0.5608737 & 0.4372294\tabularnewline
+1583 & Cuero H S & 0.4977474 & 0.4355828\tabularnewline
+1587 & Yoakum H S & 0.4819743 & 0.5490196\tabularnewline
+1591 & Yorktown H S & 0.5356672 & 0.5000000\tabularnewline
+1595 & Carrizo Springs H S & 0.5724266 & 0.5422535\tabularnewline
+1598 & Clarendon H S & 0.5638236 & 0.6774194\tabularnewline
+1601 & San Diego H S & 0.4878666 & 0.4400000\tabularnewline
+1603 & Freer H S & 0.3862139 & 0.3409091\tabularnewline
+1607 & Cisco H S & 0.5523949 & 0.6600000\tabularnewline
+1611 & Eastland H S & 0.4462326 & 0.5897436\tabularnewline
+1624 & Odessa H S & 0.6134018 & 0.4625407\tabularnewline
+1625 & Permian H S & 0.6047400 & 0.4879090\tabularnewline
+1626 & George H W Bush New Tech Odessa & 0.6995330 &
+0.5806452\tabularnewline
+1629 & Oak Cliff Faith Family Academy & 0.0981984 &
+0.2597403\tabularnewline
+1630 & Avalon School & 0.4906617 & 0.5652174\tabularnewline
+1634 & Ennis H S & 0.5434231 & 0.5014493\tabularnewline
+1638 & Ferris H S & 0.3470779 & 0.4224599\tabularnewline
+1642 & Italy H S & 0.5267624 & 0.5869565\tabularnewline
+1647 & Midlothian Heritage H S & 0.5899398 & 0.6618357\tabularnewline
+1648 & Midlothian H S & 0.5386845 & 0.5530303\tabularnewline
+1652 & Palmer H S & 0.4434987 & 0.3012048\tabularnewline
+1656 & Red Oak H S & 0.5015115 & 0.5777262\tabularnewline
+1664 & Waxahachie H S & 0.4796074 & 0.5880829\tabularnewline
+1665 & Waxahachie H S Of Choice & 0.2568226 & 0.1052632\tabularnewline
+1666 & Waxahachie Global H S & 0.6685715 & 0.6790123\tabularnewline
+1670 & Maypearl H S & 0.5002881 & 0.5454545\tabularnewline
+1677 & Paso Del Norte Academy-Mesa Charte & 0.3351863 &
+0.1707317\tabularnewline
+1678 & Paseo Del Norte Academy-Vista Del & 0.3083828 &
+0.1600000\tabularnewline
+1684 & El Paso Academy West & 0.2932020 & 0.1386139\tabularnewline
+1685 & El Paso Academy & 0.3016012 & 0.1554054\tabularnewline
+1690 & Harmony School Of Innovation - El & 0.6237344 &
+0.6551724\tabularnewline
+1691 & Harmony Science Acad (El Paso) & 0.7036944 &
+0.8035714\tabularnewline
+1703 & Clint H S & 0.5906027 & 0.5602837\tabularnewline
+1704 & Mountain View H S & 0.5269522 & 0.3584906\tabularnewline
+1705 & Clint ISD Early College Academy & 0.6846656 &
+0.7294118\tabularnewline
+1706 & Horizon H S & 0.5536212 & 0.4843750\tabularnewline
+1746 & Franklin H S & 0.5414907 & 0.6169492\tabularnewline
+1747 & Jefferson H S & 0.4240597 & 0.5656109\tabularnewline
+1748 & College Career Technology Academy & 0.2084118 &
+0.2093023\tabularnewline
+1749 & Austin H S & 0.4104255 & 0.4907749\tabularnewline
+1750 & Irvin H S & 0.3992052 & 0.4007782\tabularnewline
+1751 & Bowie H S & 0.4263922 & 0.5784753\tabularnewline
+1752 & Transmountain Early College H S & 0.6719305 &
+0.6269841\tabularnewline
+1753 & Chapin H S & 0.4964134 & 0.4599407\tabularnewline
+1754 & Andress H S & 0.3924772 & 0.4489796\tabularnewline
+1755 & Coronado H S & 0.5522255 & 0.6384266\tabularnewline
+1756 & El Paso H S & 0.5358317 & 0.6354839\tabularnewline
+1757 & Silva Health Magnet & 0.6914196 & 0.7328767\tabularnewline
+1758 & Burges H S & 0.4605022 & 0.5904762\tabularnewline
+1762 & Fabens H S & 0.6138090 & 0.4758621\tabularnewline
+1766 & San Elizario H S & 0.4417152 & 0.4951923\tabularnewline
+1797 & Del Valle H S & 0.4131567 & 0.6305310\tabularnewline
+1798 & Plato Academy & 0.1551244 & 0.1846154\tabularnewline
+1799 & Tejas School Of Choice & 0.1955885 & 0.1388889\tabularnewline
+1800 & Ysleta H S & 0.3453130 & 0.5534591\tabularnewline
+1801 & J M Hanks H S & 0.4422137 & 0.5880829\tabularnewline
+1802 & Riverside H S & 0.3798888 & 0.5613383\tabularnewline
+1803 & Bel Air H S & 0.4863750 & 0.6363636\tabularnewline
+1804 & Eastwood H S & 0.4588793 & 0.5683060\tabularnewline
+1805 & Parkland H S & 0.4017906 & 0.4012539\tabularnewline
+1806 & Valle Verde Early College H S & 0.6983822 &
+0.8409091\tabularnewline
+1810 & Anthony H S & 0.5822813 & 0.2881356\tabularnewline
+1817 & Canutillo H S & 0.4127938 & 0.4429348\tabularnewline
+1821 & Tornillo H S & 0.6212344 & 0.5344828\tabularnewline
+1841 & Mission Early College H S & 0.5982168 & 0.7924528\tabularnewline
+1842 & Montwood H S & 0.4754000 & 0.6409807\tabularnewline
+1843 & Options H S & 0.2887528 & 0.1384615\tabularnewline
+1844 & Americas H S & 0.4728775 & 0.6700855\tabularnewline
+1845 & Socorro H S & 0.4253821 & 0.5171717\tabularnewline
+1846 & Eastlake H S & 0.4553892 & 0.5612903\tabularnewline
+1847 & El Dorado H S & 0.4455451 & 0.5744125\tabularnewline
+1848 & Pebble Hills H S & 0.4967221 & 0.5566343\tabularnewline
+1902 & Premier H S Of Austin & 0.4184418 & 0.4210526\tabularnewline
+1903 & Premier H S Of Brownsville & 0.4888175 & 0.3600000\tabularnewline
+1904 & Premier H S Of Pflugerville & 0.2894003 &
+0.2307692\tabularnewline
+1905 & Premier H S Of Palmview & 0.3756739 & 0.3703704\tabularnewline
+1906 & Premier H S Of Mission & 0.3348528 & 0.2051282\tabularnewline
+1907 & Texas Virtual Academy & 0.3091699 & 0.2449355\tabularnewline
+1908 & Premier H S Of San Juan & 0.3634531 & 0.2500000\tabularnewline
+1909 & Premier H S Of Pharr & 0.3744673 & 0.1875000\tabularnewline
+1910 & Premier H S Of El Paso & 0.3691583 & 0.3636364\tabularnewline
+1911 & Premier H S Of Dayton & 0.3392514 & 0.3333333\tabularnewline
+1912 & Premier H S Of Lubbock & 0.3730378 & 0.1219512\tabularnewline
+1913 & Premier H S Of Granbury & 0.3211654 & 0.2857143\tabularnewline
+1914 & Premier H S Of Midland & 0.3692409 & 0.2187500\tabularnewline
+1915 & Premier High Schools Career \& Tech & 0.3171406 &
+0.3333333\tabularnewline
+1916 & Premier H S Of Abilene & 0.2569700 & 0.2500000\tabularnewline
+1919 & Huston Academy & 0.2666563 & 0.1428571\tabularnewline
+1923 & Dublin H S & 0.5507435 & 0.5606061\tabularnewline
+1927 & Stephenville H S & 0.5561686 & 0.6682692\tabularnewline
+1930 & Chilton School & 0.5408146 & 0.5526316\tabularnewline
+1934 & Marlin H S & 0.5122544 & 0.3888889\tabularnewline
+1938 & Rosebud-Lott H S & 0.5872225 & 0.5000000\tabularnewline
+1942 & Bonham H S & 0.4088109 & 0.3619048\tabularnewline
+1947 & Honey Grove H S & 0.3544031 & 0.4117647\tabularnewline
+1951 & Leonard H S & 0.4657145 & 0.4864865\tabularnewline
+1956 & Trenton H S & 0.5290869 & 0.5111111\tabularnewline
+1959 & Rayburn H S & 0.4314142 & 0.4117647\tabularnewline
+1963 & Flatonia Secondary & 0.6720260 & 0.5000000\tabularnewline
+1967 & La Grange H S & 0.5359108 & 0.5652174\tabularnewline
+1971 & Schulenburg Secondary & 0.6440261 & 0.5846154\tabularnewline
+1975 & Floydada H S & 0.6178298 & 0.5945946\tabularnewline
+1978 & Lockney H S & 0.5293615 & 0.5454545\tabularnewline
+1991 & George Ranch H S & 0.6993347 & 0.6753670\tabularnewline
+1992 & Foster H S & 0.6721195 & 0.6608392\tabularnewline
+1993 & B F Terry H S & 0.5741624 & 0.4409800\tabularnewline
+1994 & Lamar Cons H S & 0.5761365 & 0.5238095\tabularnewline
+1998 & Needville H S & 0.5501220 & 0.6796537\tabularnewline
+2032 & Hightower H S & 0.5343554 & 0.4839357\tabularnewline
+2033 & Thurgood Marshall H S & 0.4099758 & 0.3076923\tabularnewline
+2034 & William B Travis H S & 0.5876374 & 0.6843658\tabularnewline
+2035 & Lawrence E Elkins H S & 0.6119557 & 0.6917293\tabularnewline
+2036 & George Bush H S & 0.5069974 & 0.5662188\tabularnewline
+2037 & Dulles H S & 0.6284772 & 0.6936090\tabularnewline
+2038 & Stephen F Austin H S & 0.6307789 & 0.7528642\tabularnewline
+2039 & Clements H S & 0.7133397 & 0.7414105\tabularnewline
+2040 & Ridge Point H S & 0.6451634 & 0.6302083\tabularnewline
+2041 & Willowridge H S & 0.4194400 & 0.3234201\tabularnewline
+2042 & Kempner H S & 0.5575107 & 0.7193878\tabularnewline
+2046 & Stafford H S & 0.4795530 & 0.4765957\tabularnewline
+2050 & Mt Vernon H S & 0.4049921 & 0.7326733\tabularnewline
+2054 & Fairfield H S & 0.4956716 & 0.5000000\tabularnewline
+2058 & Teague H S & 0.5300435 & 0.5480769\tabularnewline
+2061 & Wortham H S & 0.4891427 & 0.5365854\tabularnewline
+2065 & Dilley H S & 0.4892649 & 0.3484848\tabularnewline
+2069 & Pearsall H S & 0.4974954 & 0.3038674\tabularnewline
+2073 & Seagraves Schools & 0.5987965 & 0.3750000\tabularnewline
+2077 & Seminole H S & 0.5684488 & 0.3404255\tabularnewline
+2081 & Dickinson H S & 0.4675593 & 0.5000000\tabularnewline
+2085 & Ball H S & 0.5046405 & 0.5653207\tabularnewline
+2092 & La Marque H S & 0.3796336 & 0.3473684\tabularnewline
+2093 & Texas City H S & 0.4813752 & 0.3707865\tabularnewline
+2097 & Hitchcock H S & 0.4375274 & 0.3888889\tabularnewline
+2101 & Santa Fe H S & 0.4785598 & 0.4494048\tabularnewline
+2123 & Clear Falls H S & 0.5910481 & 0.6392294\tabularnewline
+2124 & Clear Springs H S & 0.5703997 & 0.6830870\tabularnewline
+2125 & Clear View H S & 0.3440521 & 0.3333333\tabularnewline
+2126 & Clear Horizons Early College H S & 0.6794838 &
+0.8315789\tabularnewline
+2127 & Clear Lake H S & 0.6473159 & 0.6549020\tabularnewline
+2128 & Clear Brook H S & 0.5595371 & 0.7001862\tabularnewline
+2129 & Clear Creek H S & 0.5424259 & 0.6032389\tabularnewline
+2133 & Friendswood H S & 0.7249770 & 0.6820000\tabularnewline
+2137 & Fredericksburg H S & 0.5999395 & 0.5000000\tabularnewline
+2141 & Harper H S & 0.5798766 & 0.5306122\tabularnewline
+2146 & Goliad H S & 0.5273345 & 0.6046512\tabularnewline
+2150 & Gonzales H S & 0.5163663 & 0.4266667\tabularnewline
+2154 & Nixon-Smiley H S & 0.4138231 & 0.4074074\tabularnewline
+2158 & Pampa H S & 0.4757144 & 0.4171123\tabularnewline
+2162 & Bells H S & 0.5964351 & 0.4500000\tabularnewline
+2165 & Collinsville H S & 0.5548576 & 0.7021277\tabularnewline
+2170 & Pathways H S & 0.0921707 & 0.1086957\tabularnewline
+2171 & Denison H S & 0.4213567 & 0.4440000\tabularnewline
+2175 & Howe H S & 0.4382546 & 0.4788732\tabularnewline
+2179 & Sherman H S & 0.5059849 & 0.5052910\tabularnewline
+2180 & Tioga School & 0.5638724 & 0.5357143\tabularnewline
+2184 & Van Alstyne H S & 0.5436373 & 0.5304348\tabularnewline
+2188 & Whitesboro H S & 0.4955678 & 0.4528302\tabularnewline
+2192 & Whitewright H S & 0.5943611 & 0.4909091\tabularnewline
+2196 & Pottsboro H S & 0.4888742 & 0.4489796\tabularnewline
+2200 & S And S Cons H S & 0.4020216 & 0.5423729\tabularnewline
+2204 & Gunter H S & 0.5728578 & 0.4920635\tabularnewline
+2208 & Tom Bean H S & 0.4363216 & 0.5660377\tabularnewline
+2212 & Dan Chadwick Campus & 0.3205991 & 0.2250000\tabularnewline
+2216 & Gladewater H S & 0.4143865 & 0.3703704\tabularnewline
+2220 & Kilgore H S & 0.4528704 & 0.5764192\tabularnewline
+2227 & Longview H S & 0.5166587 & 0.5201794\tabularnewline
+2228 & Lead Academy H S & 0.2796857 & 0.1095890\tabularnewline
+2233 & Pine Tree H S & 0.5497646 & 0.5255474\tabularnewline
+2237 & Sabine H S & 0.5227607 & 0.6304348\tabularnewline
+2241 & Spring Hill H S & 0.5774725 & 0.6513761\tabularnewline
+2245 & White Oak H S & 0.4944476 & 0.6176471\tabularnewline
+2249 & Anderson-Shiro Jr/Sr H S & 0.5591890 & 0.6470588\tabularnewline
+2256 & Navasota H S & 0.5567293 & 0.5379747\tabularnewline
+2262 & Seguin H S & 0.5363218 & 0.3586957\tabularnewline
+2263 & Mercer \& Blumberg Lrn Ctr & 0.3284680 & 0.0129870\tabularnewline
+2273 & Allison L Steele E L C & 0.3007115 & 0.1544118\tabularnewline
+2274 & Byron P Steele II H S & 0.6569059 & 0.5445736\tabularnewline
+2275 & Samuel Clemens H S & 0.6529458 & 0.5637584\tabularnewline
+2279 & Navarro H S & 0.6296195 & 0.5179856\tabularnewline
+2283 & Marion H S & 0.5914249 & 0.5462963\tabularnewline
+2287 & Abernathy H S & 0.5510482 & 0.3777778\tabularnewline
+2291 & Hale Center H S & 0.5020964 & 0.3846154\tabularnewline
+2297 & Plainview H S & 0.4482407 & 0.5252226\tabularnewline
+2301 & Hamilton H S & 0.5408034 & 0.4727273\tabularnewline
+2305 & Hico H S & 0.5099421 & 0.5000000\tabularnewline
+2309 & Gruver H S & 0.5701860 & 0.5833333\tabularnewline
+2311 & Spearman H S & 0.5239470 & 0.4769231\tabularnewline
+2315 & Quanah H S & 0.4865937 & 0.5000000\tabularnewline
+2319 & Kountze H S & 0.5381470 & 0.5633803\tabularnewline
+2323 & Silsbee H S & 0.4717697 & 0.4689266\tabularnewline
+2327 & Hardin-Jefferson H S & 0.6033995 & 0.6357143\tabularnewline
+2331 & Lumberton H S & 0.5488022 & 0.5161290\tabularnewline
+2335 & West Hardin H S & 0.5355628 & 0.4054054\tabularnewline
+2339 & George I Sanchez H S & 0.1710080 & 0.2372881\tabularnewline
+2343 & Raul Yzaguirre School For Success & 0.5165469 &
+0.5102041\tabularnewline
+2354 & Kipp Houston H S & 0.5262990 & 0.7027027\tabularnewline
+2355 & Kipp Northeast College Preparatory & 0.4689437 &
+0.5900000\tabularnewline
+2356 & Kipp Generations Collegiate & 0.5302577 &
+0.6666667\tabularnewline
+2357 & Kipp Sunnyside H S & 0.4391163 & 0.6036036\tabularnewline
+2361 & Houston Heights Charter School & 0.2475776 &
+0.1265823\tabularnewline
+2365 & Houston Gateway Academy - Coral Ca & 0.1557254 &
+0.6666667\tabularnewline
+2369 & Calvin Nelms H S & 0.3920115 & 0.3750000\tabularnewline
+2376 & Empowerment H S & 0.5650838 & 0.3170732\tabularnewline
+2399 & Yes Prep North Forest & 0.7104065 & 0.3888889\tabularnewline
+2400 & Yes Prep - Southeast & 0.7782218 & 0.6290323\tabularnewline
+2401 & Yes Prep - 5th Ward & 0.7298787 & 0.6708861\tabularnewline
+2402 & Yes Prep - Brays Oaks & 0.7031056 & 0.6219512\tabularnewline
+2403 & Yes Prep - Gulfton & 0.6947140 & 0.5512821\tabularnewline
+2404 & Yes Prep - East End & 0.7430114 & 0.8557692\tabularnewline
+2405 & Yes Prep - Southwest & 0.7352922 & 0.5887850\tabularnewline
+2406 & Yes Prep - Northside & 0.7295548 & 0.6750000\tabularnewline
+2407 & Yes Prep - North Central & 0.7376290 & 0.7606838\tabularnewline
+2408 & Yes Prep - West & 0.7435697 & 0.6021505\tabularnewline
+2414 & Harmony Science Academy-Houston & 0.6503099 &
+0.6976744\tabularnewline
+2415 & Harmony School Of Ingenuity-Housto & 0.6037644 &
+0.5542169\tabularnewline
+2420 & Harmony School Of Advancement-Hous & 0.7145489 &
+0.6153846\tabularnewline
+2421 & Harmony School Of Discovery - Hous & 0.6977742 &
+0.7419355\tabularnewline
+2426 & Harmony School Of Innovation - Kat & 0.7547176 &
+0.6562500\tabularnewline
+2427 & Harmony School Of Innovation-Sugar & 0.7014946 &
+0.8703704\tabularnewline
+2428 & Harmony Science Academy- Beaumont & 0.5608997 &
+0.5161290\tabularnewline
+2432 & Pro-Vision H S & 0.2965275 & 0.3714286\tabularnewline
+2457 & Macarthur H S & 0.5627821 & 0.4223164\tabularnewline
+2458 & Carver H S For Applied Tech/Engine & 0.6056261 &
+0.5672515\tabularnewline
+2459 & Nimitz H S & 0.5201732 & 0.4890220\tabularnewline
+2460 & Victory Early College H S & 0.7104649 & 0.8333333\tabularnewline
+2461 & Davis H S Aldine & 0.5248707 & 0.3730159\tabularnewline
+2462 & Aldine H S & 0.5311732 & 0.3641208\tabularnewline
+2463 & Eisenhower H S & 0.5219378 & 0.3846154\tabularnewline
+2464 & Hall Center For Education & 0.3494265 & 0.1234568\tabularnewline
+2480 & Elsik H S & 0.5443033 & 0.4400527\tabularnewline
+2481 & Alief Early College H S & 0.6244490 & 0.8387097\tabularnewline
+2482 & Taylor H S & 0.5344436 & 0.4687500\tabularnewline
+2483 & Kerr H S & 0.7206187 & 0.8776596\tabularnewline
+2484 & Hastings H S & 0.5296555 & 0.3731778\tabularnewline
+2491 & Channelview H S & 0.5451405 & 0.4585742\tabularnewline
+2495 & Crosby H S & 0.5396919 & 0.4732394\tabularnewline
+2528 & Cypress Springs H S & 0.4416572 & 0.5204082\tabularnewline
+2529 & Jersey Village H S & 0.4858257 & 0.5064767\tabularnewline
+2530 & Cy-Fair H S & 0.5551637 & 0.6150062\tabularnewline
+2531 & Cypress Falls H S & 0.4899076 & 0.5888889\tabularnewline
+2532 & Cypress Lakes H S & 0.4770524 & 0.5350649\tabularnewline
+2533 & Cypress Ranch H S & 0.6444416 & 0.6950113\tabularnewline
+2534 & Langham Creek H S & 0.5376516 & 0.6091160\tabularnewline
+2535 & Cypress Ridge H S & 0.4836979 & 0.5492063\tabularnewline
+2536 & Cypress Creek H S & 0.5100662 & 0.5320600\tabularnewline
+2537 & Cypress Woods H S & 0.6053651 & 0.6235885\tabularnewline
+2541 & Deer Park H S & 0.4870299 & 0.5465969\tabularnewline
+2548 & Galena Park H S & 0.4160697 & 0.4533623\tabularnewline
+2565 & Impact Early College H S & 0.5802351 & 0.6875000\tabularnewline
+2566 & Goose Creek Memorial & 0.4216626 & 0.5504386\tabularnewline
+2567 & Lee H S & 0.3422422 & 0.4615385\tabularnewline
+2568 & Peter E Hyland Center & 0.2430969 & 0.2043796\tabularnewline
+2569 & Sterling H S & 0.4269745 & 0.5020408\tabularnewline
+2698 & Jordan H S & 0.3717720 & 0.3834586\tabularnewline
+2699 & South Early College H S & 0.5840348 & 0.4390244\tabularnewline
+2700 & Challenge Early College H S & 0.6999787 &
+0.6545455\tabularnewline
+2701 & East Early College H S & 0.6950493 & 0.8316832\tabularnewline
+2702 & Heights H S & 0.5357347 & 0.5393701\tabularnewline
+2703 & H S For Law And Justice & 0.6275841 & 0.5000000\tabularnewline
+2704 & Madison H S & 0.3956948 & 0.3473282\tabularnewline
+2705 & Liberty H S & 0.3094235 & 0.5882353\tabularnewline
+2706 & Perfor \& Vis Arts H S & 0.8412548 & 0.4821429\tabularnewline
+2707 & Lamar H S & 0.5422806 & 0.6614060\tabularnewline
+2708 & Sharpstown H S & 0.4113697 & 0.3170732\tabularnewline
+2709 & Worthing H S & 0.3117723 & 0.2634731\tabularnewline
+2710 & Energized For Stem Academy Southwe & 0.5905486 &
+0.3606557\tabularnewline
+2711 & Jones Futures Academy & 0.4332302 & 0.4657534\tabularnewline
+2712 & Westside H S & 0.5879819 & 0.6609589\tabularnewline
+2713 & Young Women's College Prep Academy & 0.7197856 &
+0.7941176\tabularnewline
+2714 & Wisdom H S & 0.4028608 & 0.2684211\tabularnewline
+2715 & Northside H S & 0.4477935 & 0.3741259\tabularnewline
+2716 & Eastwood Academy & 0.7626631 & 0.7549020\tabularnewline
+2717 & Yates H S & 0.3036537 & 0.3945578\tabularnewline
+2718 & Mickey Leland College Prep Acad Fo & 0.7138543 &
+0.4814815\tabularnewline
+2719 & Houston Math Science And Technolog & 0.4277267 &
+0.3096647\tabularnewline
+2720 & Austin H S & 0.4075326 & 0.3267045\tabularnewline
+2721 & Furr H S & 0.4057768 & 0.4046243\tabularnewline
+2722 & Texas Connections Academy At Houst & 0.3438144 &
+0.3184358\tabularnewline
+2723 & Waltrip H S & 0.5062752 & 0.4936709\tabularnewline
+2724 & Long Academy & 0.4742143 & 0.4375000\tabularnewline
+2725 & Carnegie Vanguard H S & 0.8872460 & 0.6715328\tabularnewline
+2726 & Energy Institute H S & 0.6412766 & 0.6120690\tabularnewline
+2727 & Middle College H S At Hcc Fraga & 0.2576236 &
+0.1224490\tabularnewline
+2728 & Milby H S & 0.3720645 & 0.4062500\tabularnewline
+2729 & Bellaire H S & 0.5924963 & 0.5875706\tabularnewline
+2730 & Chavez H S & 0.4879108 & 0.4736842\tabularnewline
+2731 & Victory Preparatory Academy South & 0.4008681 &
+0.1428571\tabularnewline
+2732 & Wheatley H S & 0.2983206 & 0.2746479\tabularnewline
+2733 & Middle College H S At Hcc Gulfton & 0.2638588 &
+0.1428571\tabularnewline
+2734 & Sharpstown International School & 0.5922096 &
+0.4111111\tabularnewline
+2735 & Scarborough H S & 0.3725894 & 0.3082707\tabularnewline
+2736 & Houston Academy For International & 0.6385980 &
+0.6355140\tabularnewline
+2737 & Debakey H S For Health Prof & 0.8596298 &
+0.8285714\tabularnewline
+2738 & Westbury H S & 0.4142367 & 0.3879518\tabularnewline
+2739 & Kashmere H S & 0.2924287 & 0.2631579\tabularnewline
+2740 & Sterling H S & 0.3425776 & 0.3480663\tabularnewline
+2741 & Washington B T H S & 0.3537621 & 0.3046875\tabularnewline
+2742 & North Forest H S & 0.3654330 & 0.2890173\tabularnewline
+2743 & North Houston Early College H S & 0.7450264 &
+0.7333333\tabularnewline
+2744 & Mount Carmel Academy & 0.5417803 & 0.5466667\tabularnewline
+2763 & Atascocita H S & 0.5433449 & 0.5595092\tabularnewline
+2764 & Summer Creek H S & 0.5144524 & 0.5395431\tabularnewline
+2765 & Kingwood Park H S & 0.5313574 & 0.4889435\tabularnewline
+2766 & Humble H S & 0.4195459 & 0.4113300\tabularnewline
+2767 & Quest Early College H S & 0.6797887 & 0.7738095\tabularnewline
+2768 & Kingwood H S & 0.6373436 & 0.5557461\tabularnewline
+2792 & Cinco Ranch H S & 0.6753490 & 0.7037037\tabularnewline
+2793 & Katy H S & 0.5391326 & 0.5991848\tabularnewline
+2794 & Morton Ranch H S & 0.4800169 & 0.5298013\tabularnewline
+2795 & Mayde Creek H S & 0.4839645 & 0.5162455\tabularnewline
+2796 & Raines H S & 0.2835154 & 0.1756757\tabularnewline
+2797 & Taylor H S & 0.6551969 & 0.7111111\tabularnewline
+2798 & Seven Lakes H S & 0.7254124 & 0.7402089\tabularnewline
+2799 & Tompkins H S & 0.7103766 & 0.6709324\tabularnewline
+2812 & Klein Forest H S & 0.5377517 & 0.5337500\tabularnewline
+2813 & Klein H S & 0.5865045 & 0.5860612\tabularnewline
+2814 & Klein Collins H S & 0.5770550 & 0.5538991\tabularnewline
+2820 & La Porte H S & 0.4631552 & 0.5377778\tabularnewline
+2821 & Viola Dewalt H S & 0.2051276 & 0.2000000\tabularnewline
+2837 & Pasadena High School & 0.5116053 & 0.4824561\tabularnewline
+2838 & South Houston High School & 0.4538025 & 0.4476987\tabularnewline
+2839 & Pasadena Memorial H S & 0.4239877 & 0.6021021\tabularnewline
+2840 & Tegeler Career Center & NA & 0.3035714\tabularnewline
+2841 & Dobie H S & 0.5120236 & 0.6279863\tabularnewline
+2842 & Sam Rayburn H S & 0.4548706 & 0.4551020\tabularnewline
+2855 & Spring Early College Academy & 0.6987980 &
+0.6511628\tabularnewline
+2856 & Spring H S & 0.5927730 & 0.4318508\tabularnewline
+2857 & Andy Dekaney H S & 0.5442257 & 0.3824627\tabularnewline
+2858 & Westfield H S & 0.5143004 & 0.4593750\tabularnewline
+2877 & Westchester Academy For Internatio & 0.5055249 &
+0.6736111\tabularnewline
+2878 & Memorial H S & 0.7487602 & 0.7007042\tabularnewline
+2879 & Stratford H S & 0.7092415 & 0.5978022\tabularnewline
+2880 & Northbrook H S & 0.5412264 & 0.3534483\tabularnewline
+2881 & Spring Woods H S & 0.5474897 & 0.3709273\tabularnewline
+2882 & Academy Of Choice & 0.4661060 & 0.1224490\tabularnewline
+2889 & Tomball Memorial H S & 0.6303235 & 0.5952849\tabularnewline
+2890 & Tomball H S & 0.5433699 & 0.4950495\tabularnewline
+2894 & C E King H S & 0.5696546 & 0.4953917\tabularnewline
+2898 & Hargrave H S & 0.5879841 & 0.4863813\tabularnewline
+2902 & Marshall H S & 0.4767303 & 0.4482759\tabularnewline
+2906 & Waskom H S & 0.4365575 & 0.2909091\tabularnewline
+2910 & Hallsville H S & 0.5412575 & 0.5709877\tabularnewline
+2914 & Harleton H S & 0.4312041 & 0.4807692\tabularnewline
+2918 & Elysian Fields H S & 0.4507127 & 0.5138889\tabularnewline
+2922 & Haskell H S & 0.4633855 & 0.6875000\tabularnewline
+2926 & Katherine Anne Porter School & 0.3501381 &
+0.1621622\tabularnewline
+2930 & San Marcos H S & 0.5532062 & 0.3537285\tabularnewline
+2934 & Dripping Springs H S & 0.6049038 & 0.5460993\tabularnewline
+2938 & Wimberley H S & 0.6663929 & 0.6153846\tabularnewline
+2948 & Live Oak Academy & 0.3381429 & 0.2000000\tabularnewline
+2949 & Lehman H S & 0.4776481 & 0.4308036\tabularnewline
+2950 & Jack C Hays H S & 0.5920661 & 0.5869981\tabularnewline
+2954 & Canadian H S & 0.5783903 & 0.6025641\tabularnewline
+2958 & Athens H S & 0.4627787 & 0.4830918\tabularnewline
+2962 & Brownsboro H S & 0.5291129 & 0.4444444\tabularnewline
+2966 & Cross Roads H S & 0.4756501 & 0.6666667\tabularnewline
+2970 & Eustace H S & 0.3704873 & 0.5229358\tabularnewline
+2974 & Malakoff H S & 0.4520294 & 0.4558824\tabularnewline
+2999 & Idea College Prep & 0.4088505 & 0.8787879\tabularnewline
+3000 & Idea College Prep Weslaco & 0.4950877 & 0.8453608\tabularnewline
+3001 & Idea Edinburg College Preparatory & 0.6280333 &
+0.8295455\tabularnewline
+3002 & Idea College Preparatory San Juan & 0.4736718 &
+0.9230769\tabularnewline
+3003 & Idea Frontier College Preparatory & 0.7285343 &
+0.8076923\tabularnewline
+3004 & Idea Quest College Preparatory & 0.5552668 &
+0.8518519\tabularnewline
+3005 & Idea College Preparatory Pharr & 0.5875883 &
+0.8205128\tabularnewline
+3006 & Idea College Preparatory Mission & 0.5949310 &
+0.8888889\tabularnewline
+3007 & Idea College Preparatory San Benit & 0.4908562 &
+0.8333333\tabularnewline
+3011 & Vanguard Rembrandt & 0.2683248 & 0.8387097\tabularnewline
+3018 & Donna H S & 0.4889251 & 0.5079365\tabularnewline
+3019 & Donna North H S & 0.4984802 & 0.4225352\tabularnewline
+3023 & Edcouch-Elsa H S & 0.5189234 & 0.5818815\tabularnewline
+3036 & Edinburg North H S & 0.4750473 & 0.5331126\tabularnewline
+3037 & Robert R Vela H S & 0.5180570 & 0.6298569\tabularnewline
+3038 & Economedes H S & 0.4260371 & 0.4552684\tabularnewline
+3039 & Edinburg H S & 0.4513944 & 0.5466926\tabularnewline
+3043 & Hidalgo Academy & 0.2160357 & 0.2500000\tabularnewline
+3044 & Hidalgo Early College H S & 0.6575636 & 0.7596567\tabularnewline
+3060 & Achieve Early College H S & 0.8044512 & 0.7671233\tabularnewline
+3061 & Memorial H S & 0.6675393 & 0.6687898\tabularnewline
+3062 & McAllen H S & 0.6451483 & 0.6571429\tabularnewline
+3063 & Lamar Academy & 0.4752688 & 0.4175824\tabularnewline
+3064 & Rowe H S & 0.6321997 & 0.6258993\tabularnewline
+3071 & Mercedes H S & 0.4689119 & 0.5235849\tabularnewline
+3072 & Mercedes Early College Academy & 0.5876537 &
+0.7600000\tabularnewline
+3081 & Mission H S & 0.5128536 & 0.4369369\tabularnewline
+3082 & Mission Collegiate H S & 0.7761472 & 0.6888889\tabularnewline
+3083 & Veterans Memorial H S & 0.5618983 & 0.5756881\tabularnewline
+3099 & Psja North Early College H S & 0.4790284 &
+0.5622318\tabularnewline
+3100 & Psja Southwest Early College H S & 0.4223136 &
+0.5410334\tabularnewline
+3101 & Psja Thomas Jefferson T-Stem Early & 0.7084407 &
+0.7007874\tabularnewline
+3102 & Psja Early College H S & 0.4792813 & 0.6731183\tabularnewline
+3103 & Psja Memorial Early College H S & 0.5653891 &
+0.6178010\tabularnewline
+3112 & Sharyland H S & 0.7030288 & 0.7446154\tabularnewline
+3113 & Sharyland Advanced Academic Academ & 0.7825026 &
+0.8823529\tabularnewline
+3114 & Sharyland Pioneer H S & 0.6122214 & 0.6578171\tabularnewline
+3128 & Juarez-Lincoln H S & 0.3766085 & 0.4186992\tabularnewline
+3129 & La Joya Palmview H S & 0.4203467 & 0.5158103\tabularnewline
+3130 & Jimmy Carter Early College H S & 0.4666919 &
+0.6716418\tabularnewline
+3131 & Thelma Rosa Salinas Stem Early Col & 0.5844747 &
+0.7972973\tabularnewline
+3132 & La Joya H S & 0.3786542 & 0.4991653\tabularnewline
+3140 & Weslaco H S & 0.4725701 & 0.5874770\tabularnewline
+3141 & Weslaco East H S & 0.4620898 & 0.5525606\tabularnewline
+3145 & La Villa Early College H S & 0.6820690 & 0.5000000\tabularnewline
+3149 & Monte Alto H S & 0.5166704 & 0.6111111\tabularnewline
+3153 & Valley View H S & 0.4669132 & 0.6006006\tabularnewline
+3158 & Hillsboro H S & 0.4342863 & 0.5238095\tabularnewline
+3160 & Hubbard H S & 0.5648955 & 0.5151515\tabularnewline
+3164 & Itasca H S & 0.5127047 & 0.4782609\tabularnewline
+3168 & Whitney H S & 0.3996705 & 0.4672131\tabularnewline
+3175 & Levelland H S & 0.4418898 & 0.5740741\tabularnewline
+3178 & Smyer H S & 0.5548010 & 0.6071429\tabularnewline
+3182 & Sundown H S & 0.7363983 & 0.7750000\tabularnewline
+3187 & Granbury H S & 0.5439049 & 0.5037594\tabularnewline
+3191 & Tolar H S & 0.4969566 & 0.6296296\tabularnewline
+3195 & Sulphur Springs H S & 0.4249480 & 0.4761905\tabularnewline
+3197 & Cumby H S & 0.4703372 & 0.5294118\tabularnewline
+3201 & Como-Pickton School & 0.3036459 & 0.5600000\tabularnewline
+3205 & Crockett H S & 0.5091491 & 0.3797468\tabularnewline
+3209 & Grapeland H S & 0.4806431 & 0.6111111\tabularnewline
+3213 & Lovelady J H H S & 0.5856612 & 0.2647059\tabularnewline
+3220 & Big Spring H S & 0.4144803 & 0.3698630\tabularnewline
+3224 & Coahoma H S & 0.4861320 & 0.4545455\tabularnewline
+3228 & Forsan H S & 0.5968312 & 0.6000000\tabularnewline
+3231 & Fort Hancock H S & 0.6441733 & 0.5172414\tabularnewline
+3235 & Caddo Mills H S & 0.5745694 & 0.5254237\tabularnewline
+3239 & Celeste H S & 0.4816115 & 0.3750000\tabularnewline
+3243 & Commerce H S & 0.4724613 & 0.4380952\tabularnewline
+3250 & Greenville H S & 0.4650576 & 0.4069767\tabularnewline
+3254 & Lone Oak H S & 0.4721865 & 0.5194805\tabularnewline
+3258 & Wh Ford H S & 0.3740278 & 0.2323232\tabularnewline
+3260 & Wolfe City H S & 0.5392881 & 0.5200000\tabularnewline
+3263 & Campbell H S & 0.5314431 & 0.5000000\tabularnewline
+3267 & Bland H S & 0.6252970 & 0.3829787\tabularnewline
+3271 & Boles H S & 0.5160313 & 0.3611111\tabularnewline
+3275 & Borger H S & 0.4619295 & 0.3731343\tabularnewline
+3281 & West Texas H S & 0.5252225 & 0.3404255\tabularnewline
+3286 & Jacksboro H S & 0.5386236 & 0.6190476\tabularnewline
+3292 & Edna H S & 0.5566865 & 0.4811321\tabularnewline
+3295 & Ganado H S & 0.5378449 & 0.5000000\tabularnewline
+3299 & Industrial H S & 0.6067816 & 0.6753247\tabularnewline
+3303 & Buna H S & 0.4950898 & 0.3913043\tabularnewline
+3307 & Jasper H S & 0.3861108 & 0.3783784\tabularnewline
+3311 & Kirbyville H S & 0.3966440 & 0.4235294\tabularnewline
+3315 & Evadale H S & 0.5754665 & 0.4687500\tabularnewline
+3318 & Tekoa Academy Of Accelerated Studi & 0.3213834 &
+0.2580645\tabularnewline
+3321 & Bob Hope School & 0.5774287 & 0.6825397\tabularnewline
+3325 & Nederland H S & 0.5202019 & 0.5718391\tabularnewline
+3329 & Memorial H S & 0.4809468 & 0.3908873\tabularnewline
+3333 & Port Neches-Groves H S & 0.5689950 & 0.5963855\tabularnewline
+3344 & West Brook Sr H S & 0.5484383 & 0.6086957\tabularnewline
+3345 & Ozen H S & 0.4180469 & 0.4550000\tabularnewline
+3346 & Central Senior H S & 0.4134493 & 0.3480000\tabularnewline
+3350 & Sabine Pass School & 0.7755796 & 0.8275862\tabularnewline
+3354 & Hamshire-Fannett H S & 0.6157251 & 0.6086957\tabularnewline
+3357 & Hebbronville H S & 0.5302639 & 0.4852941\tabularnewline
+3361 & Alice H S & 0.4644776 & 0.4329897\tabularnewline
+3365 & Ben Bolt-Palito Blanco H S & 0.5400025 & 0.4230769\tabularnewline
+3369 & Orange Grove H S & 0.4577986 & 0.5075758\tabularnewline
+3373 & Alvarado H S & 0.5086417 & 0.3947368\tabularnewline
+3382 & Burleson H S & 0.5497951 & 0.5530726\tabularnewline
+3383 & Burleson Centennial H S & 0.5775227 & 0.6177285\tabularnewline
+3384 & Crossroads H S & 0.2850580 & 0.0860215\tabularnewline
+3391 & Cleburne H S & 0.5443702 & 0.4573864\tabularnewline
+3392 & Team Sch & 0.1935822 & 0.2127660\tabularnewline
+3396 & Grandview H S & 0.5171286 & 0.6046512\tabularnewline
+3401 & New Horizon H S & 0.2394752 & 0.0606061\tabularnewline
+3402 & Joshua H S & 0.5434983 & 0.3881579\tabularnewline
+3406 & Keene H S & 0.5664421 & 0.5409836\tabularnewline
+3410 & Rio Vista H S & 0.4934056 & 0.3214286\tabularnewline
+3414 & Venus H S & 0.5085782 & 0.3437500\tabularnewline
+3418 & Godley H S & 0.4017282 & 0.4583333\tabularnewline
+3422 & Anson H S & 0.4691532 & 0.4677419\tabularnewline
+3428 & Hawley H S & 0.4850714 & 0.5625000\tabularnewline
+3431 & Stamford H S & 0.4626373 & 0.5625000\tabularnewline
+3435 & Karnes City H S & 0.5628388 & 0.4625000\tabularnewline
+3439 & Kenedy H S & 0.3961425 & 0.3200000\tabularnewline
+3443 & Falls City H S & 0.5718588 & 0.6666667\tabularnewline
+3450 & Crandall Compass Academy & 0.1792701 & 0.2222222\tabularnewline
+3451 & Crandall H S & 0.4469957 & 0.5391304\tabularnewline
+3458 & Forney H S & 0.5218292 & 0.6519174\tabularnewline
+3459 & North Forney H S & 0.4884101 & 0.5754986\tabularnewline
+3463 & Kaufman H S & 0.4426661 & 0.4382979\tabularnewline
+3467 & Kemp H S & 0.4006097 & 0.3711340\tabularnewline
+3471 & Mabank H S & 0.4878787 & 0.3840304\tabularnewline
+3475 & Terrell H S & 0.3932609 & 0.4534413\tabularnewline
+3479 & Scurry-Rosser H S & 0.4665990 & 0.4523810\tabularnewline
+3486 & Boerne - Samuel V Champion H S & 0.6350218 &
+0.6204188\tabularnewline
+3487 & Boerne H S & 0.5866947 & 0.6582734\tabularnewline
+3491 & Comfort H S & 0.4777644 & 0.5396825\tabularnewline
+3495 & Center Point H S & 0.5539715 & 0.2903226\tabularnewline
+3501 & Tivy H S & 0.5986207 & 0.4747475\tabularnewline
+3502 & Hill Country H S & 0.1782083 & 0.1176471\tabularnewline
+3506 & Ingram Tom Moore H S & 0.5072656 & 0.4029851\tabularnewline
+3510 & Junction H S & 0.5750157 & 0.3863636\tabularnewline
+3514 & Brackett H S & 0.6402385 & 0.4883721\tabularnewline
+3518 & H M King H S & 0.4883640 & 0.4587156\tabularnewline
+3522 & Kaufer H S & 0.6124932 & 0.6842105\tabularnewline
+3526 & Santa Gertrudis Academy H S & 0.6620310 &
+0.8313253\tabularnewline
+3533 & Chisum H S & 0.4503917 & 0.5070423\tabularnewline
+3537 & Paris H S & 0.4676690 & 0.5340909\tabularnewline
+3541 & North Lamar H S & 0.4653231 & 0.5392157\tabularnewline
+3545 & Prairiland H S & 0.4184140 & 0.4218750\tabularnewline
+3549 & Littlefield H S & 0.4847421 & 0.5352113\tabularnewline
+3553 & Olton H S & 0.5284620 & 0.6511628\tabularnewline
+3554 & Springlake-Earth H S & 0.4596535 & 0.4583333\tabularnewline
+3558 & Sudan H S & 0.5710385 & 0.4615385\tabularnewline
+3562 & Lampasas H S & 0.5140220 & 0.4957983\tabularnewline
+3566 & Cotulla H S & 0.4817397 & 0.4536082\tabularnewline
+3570 & Hallettsville H S & 0.5231155 & 0.5731707\tabularnewline
+3574 & Shiner H S & 0.6320191 & 0.6097561\tabularnewline
+3578 & Giddings H S & 0.5519305 & 0.4726027\tabularnewline
+3582 & Lexington H S & 0.5457147 & 0.4696970\tabularnewline
+3586 & Buffalo H S & 0.5485493 & 0.5490196\tabularnewline
+3590 & Centerville Jr-Sr H S & 0.5863432 & 0.4545455\tabularnewline
+3594 & Normangee H S & 0.6133401 & 0.5000000\tabularnewline
+3598 & Leon H S & 0.5934675 & 0.5306122\tabularnewline
+3602 & Cleveland H S & 0.5852682 & 0.2897196\tabularnewline
+3606 & Dayton H S & 0.4697263 & 0.4240506\tabularnewline
+3610 & Hardin H S & 0.5367476 & 0.3698630\tabularnewline
+3614 & Hull-Daisetta H S & 0.5204326 & 0.4186047\tabularnewline
+3618 & Liberty H S & 0.6110256 & 0.4353741\tabularnewline
+3622 & Tarkington H S & 0.4469906 & 0.4070796\tabularnewline
+3627 & Groesbeck H S & 0.4025183 & 0.4552846\tabularnewline
+3631 & Mexia H S & 0.4384353 & 0.5555556\tabularnewline
+3635 & George West H S & 0.5525785 & 0.4925373\tabularnewline
+3638 & Three Rivers Jr/Sr H S & 0.5357503 & 0.4677419\tabularnewline
+3642 & Llano H S & 0.5602233 & 0.5294118\tabularnewline
+3646 & South Plains Academy Charter H S & 0.2602097 &
+0.1343284\tabularnewline
+3664 & Coronado H S & 0.5467551 & 0.4240964\tabularnewline
+3665 & Talkington School For Young Women & 0.7894053 &
+0.8717949\tabularnewline
+3666 & Monterey H S & 0.5383955 & 0.4221698\tabularnewline
+3667 & Lubbock H S & 0.6729977 & 0.5133333\tabularnewline
+3668 & Estacado H S & 0.4764237 & 0.3777778\tabularnewline
+3672 & New Deal H S & 0.6165823 & 0.6222222\tabularnewline
+3676 & Slaton H S & 0.4877104 & 0.2987013\tabularnewline
+3681 & Lubbock-Cooper High School & 0.5535816 & 0.6279863\tabularnewline
+3682 & Lubbock-Cooper New Hope Academy & 0.2245303 &
+0.3111111\tabularnewline
+3686 & Frenship H S & 0.6174592 & 0.5819820\tabularnewline
+3690 & Roosevelt H S & 0.4153787 & 0.4084507\tabularnewline
+3694 & Shallowater H S & 0.5017210 & 0.7678571\tabularnewline
+3698 & Idalou H S & 0.4635959 & 0.5443038\tabularnewline
+3699 & O'Donnell School & 0.5486881 & 0.4615385\tabularnewline
+3703 & Tahoka H S & 0.4815802 & 0.4615385\tabularnewline
+3707 & Madisonville H S & 0.5295984 & 0.4603175\tabularnewline
+3709 & North Zulch Elementary/Secondary & 0.5763047 &
+0.3750000\tabularnewline
+3713 & Jefferson H S & 0.3979903 & 0.4576271\tabularnewline
+3717 & Stanton H S & 0.5532608 & 0.4242424\tabularnewline
+3721 & Mason H S & 0.7247494 & 0.7777778\tabularnewline
+3725 & Bay City H S & 0.5580523 & 0.4925373\tabularnewline
+3729 & Tidehaven H S & 0.4924485 & 0.4925373\tabularnewline
+3733 & Palacios H S & 0.5742588 & 0.6500000\tabularnewline
+3737 & Van Vleck H S & 0.5002851 & 0.4935065\tabularnewline
+3744 & Eagle Pass High School & 0.6266622 & 0.5951417\tabularnewline
+3745 & C C Winn High School & 0.5272849 & 0.4659341\tabularnewline
+3749 & Brady H S & 0.4810608 & 0.4929577\tabularnewline
+3753 & Paul And Jane Meyer Public H S & 0.5792470 &
+0.7500000\tabularnewline
+3769 & Harmony School Of Innovation - For & 0.7342132 &
+0.9387755\tabularnewline
+3770 & Harmony School Of Innovation - Wac & 0.4653793 &
+0.7368421\tabularnewline
+3771 & Harmony Science Academy - Euless & 0.6487704 &
+0.8857143\tabularnewline
+3772 & Harmony Science Academy - Dallas & 0.6509494 &
+0.7191011\tabularnewline
+3773 & Harmony School Of Nature And Athle & 0.6346175 &
+0.7619048\tabularnewline
+3774 & Harmony School Of Business - Dalla & 0.6555549 &
+0.9230769\tabularnewline
+3775 & Harmony Science Academy - Carrollt & 0.6262016 &
+0.7058824\tabularnewline
+3776 & Harmony School Of Innovation - Gar & 0.6356221 &
+0.6857143\tabularnewline
+3780 & Crawford H S & 0.6466389 & 0.8250000\tabularnewline
+3784 & Midway H S & 0.6301657 & 0.6078098\tabularnewline
+3788 & La Vega H S & 0.4171288 & 0.5209581\tabularnewline
+3792 & Lorena High & 0.5925467 & 0.6969697\tabularnewline
+3796 & Mart H S & 0.5777877 & 0.8000000\tabularnewline
+3800 & McGregor H S & 0.5428550 & 0.6481481\tabularnewline
+3804 & Moody H S & 0.5122778 & 0.5686275\tabularnewline
+3808 & Riesel School & 0.5878411 & 0.6216216\tabularnewline
+3815 & University H S & 0.4422150 & 0.5350649\tabularnewline
+3816 & Waco H S & 0.4195811 & 0.5207756\tabularnewline
+3820 & West H S & 0.5630889 & 0.6813187\tabularnewline
+3824 & Axtell H S & 0.5377903 & 0.7400000\tabularnewline
+3828 & Bruceville-Eddy H S & 0.5531776 & 0.6470588\tabularnewline
+3832 & China Spring H S & 0.5751759 & 0.7005348\tabularnewline
+3836 & Connally High School & 0.5044583 & 0.5389610\tabularnewline
+3840 & Robinson H S & 0.4954141 & 0.6164384\tabularnewline
+3844 & Bosqueville H S & 0.6092607 & 0.6888889\tabularnewline
+3848 & Devine H S & 0.4580843 & 0.3986014\tabularnewline
+3851 & D'Hanis School & 0.5849776 & 0.4062500\tabularnewline
+3855 & Natalia H S & 0.4836574 & 0.3432836\tabularnewline
+3859 & Hondo H S & 0.5478166 & 0.4817518\tabularnewline
+3863 & Medina Valley H S & 0.3741308 & 0.4781022\tabularnewline
+3876 & Midland H S & 0.5053883 & 0.3981337\tabularnewline
+3877 & Lee H S & 0.5514526 & 0.5198618\tabularnewline
+3878 & Early College H S At Midland Colle & 0.7060621 &
+0.7173913\tabularnewline
+3879 & Viola M Coleman H S & 0.3631976 & 0.1904762\tabularnewline
+3883 & Greenwood H S & 0.5447874 & 0.5000000\tabularnewline
+3887 & Cameron Yoe H S & 0.4499845 & 0.5392157\tabularnewline
+3891 & Milano H S & 0.4616959 & 0.5526316\tabularnewline
+3895 & Rockdale H S & 0.4692038 & 0.4166667\tabularnewline
+3899 & Thorndale H S & 0.6351518 & 0.6603774\tabularnewline
+3903 & Goldthwaite H S & 0.4515814 & 0.5000000\tabularnewline
+3907 & Colorado H S & 0.4796156 & 0.6818182\tabularnewline
+3911 & Bowie H S & 0.4744345 & 0.4461538\tabularnewline
+3915 & Nocona H S & 0.4831886 & 0.4745763\tabularnewline
+3934 & Conroe H S & 0.4777189 & 0.4424899\tabularnewline
+3935 & Caney Creek H S & 0.4303790 & 0.4329268\tabularnewline
+3936 & College Park H S & 0.7053924 & 0.5861582\tabularnewline
+3937 & Hauke Alter Ed & 0.2830133 & 0.0967742\tabularnewline
+3939 & Oak Ridge H S & 0.5976401 & 0.5360000\tabularnewline
+3943 & Montgomery H S & 0.5947844 & 0.5806452\tabularnewline
+3947 & Willis H S & 0.5068451 & 0.4158416\tabularnewline
+3957 & Alpha & 0.3953708 & 0.1081081\tabularnewline
+3958 & Magnolia H S & 0.6525813 & 0.5314010\tabularnewline
+3959 & Magnolia West H S & 0.5521214 & 0.4634146\tabularnewline
+3963 & Splendora H S & 0.4251576 & 0.2996109\tabularnewline
+3971 & Porter H S & 0.5395660 & 0.3866348\tabularnewline
+3972 & Infinity Early College H S & 0.7187452 & 0.6078431\tabularnewline
+3973 & New Caney H S & 0.4483103 & 0.3650000\tabularnewline
+3977 & Dumas H S & 0.5367555 & 0.6033520\tabularnewline
+3980 & Sunray H S & 0.6046237 & 0.4358974\tabularnewline
+3984 & Daingerfield H S & 0.3783518 & 0.3030303\tabularnewline
+3988 & Pewitt H S & 0.4202621 & 0.4821429\tabularnewline
+3991 & Chireno H S & 0.4339432 & 0.5555556\tabularnewline
+3995 & Cushing School & 0.6517745 & 0.3611111\tabularnewline
+3999 & Garrison H S & 0.5697084 & 0.5306122\tabularnewline
+4005 & Nacogdoches H S & 0.5078969 & 0.4813665\tabularnewline
+4006 & Malcolm Rector Technical H S & 0.4359360 &
+0.0666667\tabularnewline
+4010 & Woden H S & 0.5992959 & 0.5263158\tabularnewline
+4014 & Central Heights H S & 0.5414609 & 0.5697674\tabularnewline
+4018 & Douglass School & 0.4766631 & 0.4444444\tabularnewline
+4022 & Blooming Grove H S & 0.5131771 & 0.6229508\tabularnewline
+4026 & Corsicana High School & 0.5237477 & 0.5610465\tabularnewline
+4030 & Dawson H S & 0.5544834 & 0.4666667\tabularnewline
+4036 & Kerens School & 0.6449907 & 0.6326531\tabularnewline
+4040 & Mildred H S & 0.5903679 & 0.6949153\tabularnewline
+4044 & Rice H S & 0.5118829 & 0.5217391\tabularnewline
+4048 & Newton H S & 0.3586300 & 0.3283582\tabularnewline
+4052 & Deweyville H S & 0.4618492 & 0.5714286\tabularnewline
+4058 & Sweetwater H S & 0.3613739 & 0.5531915\tabularnewline
+4062 & Bishop H S & 0.4974360 & 0.4416667\tabularnewline
+4066 & Calallen H S & 0.5879676 & 0.5775578\tabularnewline
+4091 & Coles H S And Educational Center & 0.3332984 &
+0.0506329\tabularnewline
+4092 & Collegiate H S & 0.6293057 & 0.6888889\tabularnewline
+4093 & King H S & 0.4635539 & 0.4547945\tabularnewline
+4094 & Veterans Memorial H S & 0.5628967 & 0.6490826\tabularnewline
+4095 & Roy Miller H S And Metro School Of & 0.4428277 &
+0.3674242\tabularnewline
+4096 & Moody H S & 0.4379171 & 0.4789916\tabularnewline
+4097 & Carroll H S & 0.4413800 & 0.4385151\tabularnewline
+4098 & Harold T Branch Academy For Career & 0.5583047 &
+0.6428571\tabularnewline
+4099 & Ray H S & 0.5396290 & 0.4579832\tabularnewline
+4102 & London H S & 0.7265084 & 0.6545455\tabularnewline
+4106 & Port Aransas H S & 0.6810990 & 0.6875000\tabularnewline
+4110 & Robstown Early College H S & 0.4686274 & 0.4497041\tabularnewline
+4114 & Tuloso-Midway H S & 0.5320195 & 0.6000000\tabularnewline
+4118 & Banquete H S & 0.4778856 & 0.5507246\tabularnewline
+4122 & Flour Bluff H S & 0.6157787 & 0.5402844\tabularnewline
+4126 & West Oso H S & 0.4163207 & 0.4336283\tabularnewline
+4133 & Boys Ranch H S & 0.3397862 & 0.4166667\tabularnewline
+4135 & Vega H S & 0.5203463 & 0.5000000\tabularnewline
+4139 & Bridge City H S & 0.5727772 & 0.5336788\tabularnewline
+4143 & Orangefield H S & 0.4432144 & 0.5566038\tabularnewline
+4147 & West Orange-Stark H S & 0.4723944 & 0.4661017\tabularnewline
+4152 & Vidor H S & 0.4261928 & 0.4809160\tabularnewline
+4153 & Aim Center H S & 0.1254247 & 0.0394737\tabularnewline
+4157 & Lit Cypr-Mrceville H S & 0.4565016 & 0.5000000\tabularnewline
+4162 & Mineral Wells H S & 0.4761137 & 0.4309392\tabularnewline
+4166 & Santo H S & 0.5770115 & 0.6296296\tabularnewline
+4170 & Beckville Jr-Sr High School & 0.4968736 &
+0.6923077\tabularnewline
+4174 & Carthage H S & 0.4655879 & 0.4560440\tabularnewline
+4177 & Gary School & 0.4779909 & 0.6562500\tabularnewline
+4179 & Crosstimbers Academy & 0.2652070 & 0.1951220\tabularnewline
+4182 & Poolville H S & 0.5605900 & 0.4230769\tabularnewline
+4186 & Springtown H S & 0.4415537 & 0.4833333\tabularnewline
+4190 & Weatherford H S & 0.4548243 & 0.4676525\tabularnewline
+4194 & Millsap H S & 0.4944774 & 0.5000000\tabularnewline
+4198 & Aledo H S & 0.6263652 & 0.5949367\tabularnewline
+4202 & Peaster H S & 0.4767391 & 0.6617647\tabularnewline
+4206 & Brock H S & 0.6550059 & 0.6632653\tabularnewline
+4207 & Bovina H S & 0.5328921 & 0.4642857\tabularnewline
+4210 & Farwell H S & 0.4920869 & 0.3076923\tabularnewline
+4217 & Fort Stockton High & 0.5872067 & 0.3529412\tabularnewline
+4219 & Iraan H S & 0.6379423 & 0.5333333\tabularnewline
+4223 & Big Sandy School & 0.5070846 & 0.4594595\tabularnewline
+4227 & Corrigan-Camden H S & 0.5983267 & 0.5645161\tabularnewline
+4231 & Livingston H S & 0.4598781 & 0.4221106\tabularnewline
+4235 & Onalaska Jr/Sr High & 0.4824292 & 0.4137931\tabularnewline
+4248 & Amarillo H S & 0.6791047 & 0.6137667\tabularnewline
+4249 & Tascosa H S & 0.6238948 & 0.5270833\tabularnewline
+4250 & Palo Duro H S & 0.5454008 & 0.4825871\tabularnewline
+4251 & Caprock H S & 0.5666408 & 0.6102564\tabularnewline
+4255 & River Road H S & 0.3921972 & 0.2872340\tabularnewline
+4259 & Highland Park H S & 0.5331533 & 0.5882353\tabularnewline
+4263 & Bushland H S & 0.4674543 & 0.6410256\tabularnewline
+4267 & Presidio H S & 0.4833605 & 0.6391753\tabularnewline
+4271 & Rains H S & 0.4098386 & 0.4895833\tabularnewline
+4278 & Canyon H S & 0.4290268 & 0.5267176\tabularnewline
+4279 & Randall H S & 0.4792086 & 0.5348189\tabularnewline
+4283 & Reagan County H S & 0.5332917 & 0.5581395\tabularnewline
+4284 & Avery H S & 0.5107177 & 0.4545455\tabularnewline
+4288 & Rivercrest H S & 0.4654327 & 0.4888889\tabularnewline
+4293 & Detroit H S & 0.4485333 & 0.4000000\tabularnewline
+4297 & Pecos H S & 0.5334547 & 0.3483871\tabularnewline
+4301 & Woodsboro H S & 0.5254515 & 0.6551724\tabularnewline
+4305 & Refugio H S & 0.5833688 & 0.4821429\tabularnewline
+4309 & Bremond H S & 0.6239941 & 0.6842105\tabularnewline
+4313 & Franklin H S & 0.5345737 & 0.7362637\tabularnewline
+4317 & Hearne H S & 0.5099863 & 0.3725490\tabularnewline
+4320 & Mumford H S & 0.6380385 & 0.5384615\tabularnewline
+4328 & Rockwall H S & 0.6294269 & 0.6159420\tabularnewline
+4329 & Rockwall-Heath H S & 0.6360985 & 0.5793651\tabularnewline
+4333 & Royse City H S & 0.5786856 & 0.4506173\tabularnewline
+4337 & Ballinger H S & 0.4838489 & 0.6271186\tabularnewline
+4340 & Miles H S & 0.6292776 & 0.6000000\tabularnewline
+4343 & Winters H S & 0.6031497 & 0.3095238\tabularnewline
+4347 & Henderson H S & 0.3872862 & 0.3765182\tabularnewline
+4349 & Mt Enterprise H S & 0.4742334 & 0.4411765\tabularnewline
+4353 & Overton H S & 0.4515721 & 0.5428571\tabularnewline
+4357 & Tatum H S & 0.4828861 & 0.5916667\tabularnewline
+4361 & Carlisle School & 0.4811082 & 0.6285714\tabularnewline
+4365 & West Rusk H S & 0.4007802 & 0.4126984\tabularnewline
+4369 & Hemphill H S & 0.4730654 & 0.3559322\tabularnewline
+4373 & West Sabine H S & 0.4931002 & 0.4590164\tabularnewline
+4377 & San Augustine H S & 0.4316133 & 0.5238095\tabularnewline
+4383 & Coldspring-Oakhurst H S & 0.4279726 & 0.3660714\tabularnewline
+4387 & Shepherd H S & 0.4678611 & 0.3769231\tabularnewline
+4391 & Aransas Pass H S & 0.4286597 & 0.3461538\tabularnewline
+4395 & Gregory-Portland H S & 0.5896099 & 0.5230769\tabularnewline
+4399 & Ingleside H S & 0.3702522 & 0.3448276\tabularnewline
+4403 & Mathis H S & 0.4413794 & 0.4047619\tabularnewline
+4407 & Odem H S & 0.5322028 & 0.6049383\tabularnewline
+4411 & Sinton H S & 0.4265807 & 0.4437086\tabularnewline
+4415 & Taft H S & 0.3318485 & 0.4027778\tabularnewline
+4419 & San Saba H S & 0.6137031 & 0.6176471\tabularnewline
+4423 & Eldorado H S & 0.6295966 & 0.5161290\tabularnewline
+4427 & Snyder H S & 0.4425177 & 0.4025157\tabularnewline
+4430 & Albany Jr-Sr H S & 0.6341396 & 0.6521739\tabularnewline
+4434 & Center H S & 0.4594204 & 0.6111111\tabularnewline
+4435 & Joaquin H S & 0.4744054 & 0.4893617\tabularnewline
+4437 & Shelbyville School & 0.5136802 & 0.5849057\tabularnewline
+4441 & Tenaha Schools & 0.4446430 & 0.5106383\tabularnewline
+4443 & Timpson School & 0.5673173 & 0.4722222\tabularnewline
+4444 & Stratford H S & 0.5862118 & 0.3720930\tabularnewline
+4448 & Arp H S & 0.4310277 & 0.5000000\tabularnewline
+4452 & Bullard H S & 0.5003950 & 0.5635359\tabularnewline
+4456 & Lindale H S & 0.5599156 & 0.5164835\tabularnewline
+4460 & Troup H S & 0.4868353 & 0.5125000\tabularnewline
+4467 & John Tyler H S & 0.4291146 & 0.4872390\tabularnewline
+4468 & Robert E Lee H S & 0.5698717 & 0.5271318\tabularnewline
+4472 & Whitehouse H S & 0.5581992 & 0.5457317\tabularnewline
+4476 & Chapel Hill H S & 0.4643742 & 0.4923664\tabularnewline
+4480 & Winona H S & 0.4419736 & 0.3928571\tabularnewline
+4484 & Brazos River Charter School & 0.2665837 &
+0.1666667\tabularnewline
+4488 & Glen Rose H S & 0.6341107 & 0.6033058\tabularnewline
+4495 & Preparatory For Early College H S & 0.6987691 &
+0.8217822\tabularnewline
+4496 & Rio Grande City CISD Grulla H S & 0.4658907 &
+0.4861111\tabularnewline
+4497 & Rio Grande City H S & 0.4696178 & 0.5219780\tabularnewline
+4501 & Roma H S & 0.5025972 & 0.6884817\tabularnewline
+4505 & Breckenridge H S & 0.5389543 & 0.4563107\tabularnewline
+4509 & Sonora H S & 0.5331529 & 0.5471698\tabularnewline
+4513 & Tulia H S & 0.4270251 & 0.4102564\tabularnewline
+4517 & Fort Worth Academy Of Fine Arts & 0.6978702 &
+0.6136364\tabularnewline
+4521 & Westlake Academy & 0.6653578 & 0.4531250\tabularnewline
+4525 & Newman International At Cedar Hill & 0.4740408 &
+0.5454545\tabularnewline
+4526 & Newman International Academy Of Ar & 0.5416797 &
+0.5405405\tabularnewline
+4545 & Lamar H S & 0.3832006 & 0.4673540\tabularnewline
+4546 & Seguin H S & 0.4310406 & 0.5367089\tabularnewline
+4547 & Arlington Collegiate H S & 0.5683577 & 0.6867470\tabularnewline
+4548 & Venture Alter H S & 0.1800964 & 0.2083333\tabularnewline
+4549 & Martin H S & 0.4950732 & 0.5811138\tabularnewline
+4550 & Bowie H S & 0.3807865 & 0.5093750\tabularnewline
+4551 & Sam Houston H S & 0.3427318 & 0.3900602\tabularnewline
+4552 & Arlington H S & 0.4389495 & 0.4869432\tabularnewline
+4564 & Birdville H S & 0.5652077 & 0.5744235\tabularnewline
+4565 & Richland H S & 0.5071987 & 0.5396146\tabularnewline
+4566 & Haltom H S & 0.4795530 & 0.5284872\tabularnewline
+4573 & Everman H S & 0.5766974 & 0.4623656\tabularnewline
+4574 & Everman Academy H S & 0.2758832 & 0.0357143\tabularnewline
+4625 & Southwest H S & 0.4895781 & 0.5320000\tabularnewline
+4626 & Carter-Riverside H S & 0.4614953 & 0.5181159\tabularnewline
+4627 & Diamond Hill-Jarvis H S & 0.4346912 & 0.3404255\tabularnewline
+4628 & Marine Creek Collegiate H S & 0.5694312 &
+0.5625000\tabularnewline
+4629 & Success H S & 0.2748581 & 0.2530120\tabularnewline
+4630 & Polytechnic H S & 0.4015747 & 0.3195876\tabularnewline
+4631 & O D Wyatt H S & 0.3847109 & 0.3543307\tabularnewline
+4632 & South Hills H S & 0.4641227 & 0.4278215\tabularnewline
+4633 & Arlington Heights H S & 0.5198855 & 0.5714286\tabularnewline
+4634 & Benbrook Middle/High School & 0.5178870 &
+0.5108696\tabularnewline
+4635 & North Side H S & 0.5082594 & 0.4729242\tabularnewline
+4636 & Trimble Technical H S & 0.5951447 & 0.5413333\tabularnewline
+4637 & Texas Academy Of Biomedical & 0.7260764 &
+0.7500000\tabularnewline
+4638 & Eastern Hills H S & 0.3721937 & 0.3585859\tabularnewline
+4639 & Paschal H S & 0.6121749 & 0.5207101\tabularnewline
+4640 & Dunbar H S & 0.4025054 & 0.4371585\tabularnewline
+4641 & Young Men's Leadership Academy & 0.6223872 &
+0.7500000\tabularnewline
+4642 & Western Hills H S & 0.4267165 & 0.3657143\tabularnewline
+4643 & Young Women's Leadership Academy & 0.7627092 &
+0.9333333\tabularnewline
+4654 & The Bridges Acad Alter & 0.1630779 & 0.3389831\tabularnewline
+4655 & Iuniversity Prep & 0.5334535 & 0.4464286\tabularnewline
+4656 & Grapevine H S & 0.6908126 & 0.5509138\tabularnewline
+4657 & Grapevine-Colleyville Collegiate A & 0.6175088 &
+0.5735294\tabularnewline
+4658 & Colleyville Heritage H S & 0.6912616 & 0.5879733\tabularnewline
+4673 & Fossil Ridge H S & 0.5161525 & 0.5294118\tabularnewline
+4674 & New Direction Lrn Ctr & 0.2918277 & 0.2820513\tabularnewline
+4675 & Central H S & 0.5688825 & 0.5940767\tabularnewline
+4676 & Keller H S & 0.6625459 & 0.6039755\tabularnewline
+4677 & Timber Creek H S & 0.5478171 & 0.5921626\tabularnewline
+4699 & The Phoenix Academy & 0.3470747 & 0.2416667\tabularnewline
+4700 & Mansfield Legacy H S & 0.5330764 & 0.5662338\tabularnewline
+4701 & Mansfield Timberview H S & 0.5274826 & 0.5749386\tabularnewline
+4702 & Mansfield Lake Ridge H S & 0.6033264 & 0.5731225\tabularnewline
+4703 & Mansfield Summit H S & 0.5084761 & 0.5815900\tabularnewline
+4704 & Mansfield Frontier H S & 0.5673445 & 0.6804124\tabularnewline
+4705 & Mansfield H S & 0.5977150 & 0.6554307\tabularnewline
+4709 & Lake Worth H S & 0.4772292 & 0.4971098\tabularnewline
+4716 & Crowley H S & 0.4660485 & 0.4552846\tabularnewline
+4717 & North Crowley H S & 0.4791909 & 0.5166667\tabularnewline
+4721 & Kennedale H S & 0.5038444 & 0.5930736\tabularnewline
+4725 & Azle H S & 0.4350402 & 0.4564644\tabularnewline
+4726 & Azle Hornet Academy & 0.2877341 & 0.0800000\tabularnewline
+4734 & Trinity H S & 0.4985172 & 0.5327103\tabularnewline
+4735 & Bell H S & 0.5428641 & 0.6148970\tabularnewline
+4736 & Keys H S & 0.3064990 & 0.0909091\tabularnewline
+4741 & Reach H S & 0.1778109 & 0.1111111\tabularnewline
+4742 & Castleberry H S & 0.5548302 & 0.3422460\tabularnewline
+4754 & Boswell H S & 0.5255173 & 0.5663265\tabularnewline
+4755 & Chisholm Trail H S & 0.4765465 & 0.4899598\tabularnewline
+4756 & Elmer C Watson H S & 0.2159147 & 0.1570248\tabularnewline
+4757 & Saginaw H S & 0.4656586 & 0.4803695\tabularnewline
+4761 & Carroll Senior H S & 0.7429272 & 0.4913043\tabularnewline
+4766 & Brewer H S & 0.4449605 & 0.4587379\tabularnewline
+4779 & Ischool High At University Park & 0.6498426 &
+0.5714286\tabularnewline
+4780 & Founders Classical Academy Of Lean & 0.6285172 &
+0.5925926\tabularnewline
+4781 & Ischool High At The Woodlands & 0.5721166 &
+0.5172414\tabularnewline
+4782 & Founders Classical Academy & 0.6771453 & 0.5892857\tabularnewline
+4783 & Stem Academy - Lewisville & 0.4568879 & 0.6511628\tabularnewline
+4793 & Cooper H S & 0.4213947 & 0.5302594\tabularnewline
+4794 & Academy For Technology Engineering & 0.6122663 &
+0.5540541\tabularnewline
+4795 & Abilene H S & 0.4352682 & 0.4504950\tabularnewline
+4799 & Merkel H S & 0.3967050 & 0.4761905\tabularnewline
+4803 & Jim Ned H S & 0.6188408 & 0.5294118\tabularnewline
+4807 & Wylie H S & 0.6217033 & 0.7112971\tabularnewline
+4811 & Brownfield H S & 0.4941198 & 0.4347826\tabularnewline
+4812 & Meadow School & 0.5820037 & 0.5769231\tabularnewline
+4816 & Mount Pleasant H S & 0.4699991 & 0.5833333\tabularnewline
+4820 & Chapel Hill H S & 0.4879217 & 0.6744186\tabularnewline
+4824 & Tlc Academy & 0.3810314 & 0.4117647\tabularnewline
+4828 & Christoval H S & 0.4893159 & 0.5897436\tabularnewline
+4835 & Lake View H S & 0.3429050 & 0.3440367\tabularnewline
+4836 & Central H S & 0.4664623 & 0.4812680\tabularnewline
+4841 & Wall H S & 0.5340447 & 0.8734177\tabularnewline
+4845 & Grape Creek H S & 0.4372080 & 0.4090909\tabularnewline
+4849 & Nyos Charter School & 0.6216543 & 0.5600000\tabularnewline
+4851 & Chaparral Star Academy & 0.7239105 & 0.5925926\tabularnewline
+4857 & Harmony Science Academy-Pflugervil & 0.6441952 &
+0.6173913\tabularnewline
+4858 & Harmony School Of Excellence - Aus & 0.6683402 &
+0.3928571\tabularnewline
+4864 & The East Austin College Prep At Ml & 0.5318953 &
+0.5909091\tabularnewline
+4865 & The Excel Center & 0.3540233 & 0.1428571\tabularnewline
+4908 & McCallum H S & 0.5260136 & 0.4986737\tabularnewline
+4909 & Lbj High School & 0.2776301 & 0.4210526\tabularnewline
+4910 & Travis H S & 0.3310644 & 0.4285714\tabularnewline
+4911 & Austin H S & 0.4897553 & 0.5021739\tabularnewline
+4912 & Lanier H S & 0.3332770 & 0.3110048\tabularnewline
+4913 & Lasa H S & 0.8322038 & 0.5222672\tabularnewline
+4914 & Bowie H S & 0.5408778 & 0.6220840\tabularnewline
+4915 & Garza Independence H S & 0.2757638 & 0.2692308\tabularnewline
+4916 & Reagan H S & 0.3510153 & 0.3604061\tabularnewline
+4917 & Eastside Memorial At The Johnston & 0.2593356 &
+0.2833333\tabularnewline
+4918 & Crockett H S & 0.3275451 & 0.4163569\tabularnewline
+4919 & Graduation Prep Academy Travis & 0.2103477 &
+0.1034483\tabularnewline
+4920 & Richards Sch For Young Women Leade & 0.7357893 &
+0.7472527\tabularnewline
+4921 & Anderson H S & 0.5486885 & 0.6215686\tabularnewline
+4922 & Akins H S & 0.3761108 & 0.5104762\tabularnewline
+4932 & Pflugerville H S & 0.5648278 & 0.5097192\tabularnewline
+4933 & John B Connally H S & 0.4708006 & 0.4765625\tabularnewline
+4934 & Hendrickson H S & 0.5423260 & 0.5160305\tabularnewline
+4943 & Manor H S & 0.5022753 & 0.4290030\tabularnewline
+4944 & Manor New Technology High & 0.6446404 & 0.6666667\tabularnewline
+4945 & Manor Excel Academy & 0.2188561 & 0.1538462\tabularnewline
+4949 & Westlake H S & 0.7306603 & 0.5253682\tabularnewline
+4956 & Del Valle H S & 0.5527383 & 0.4691589\tabularnewline
+4957 & Del Valle Opportunity Ctr & 0.2435668 & 0.0164835\tabularnewline
+4961 & Lago Vista H S & 0.6381495 & 0.5660377\tabularnewline
+4965 & Lake Travis H S & 0.6721426 & 0.5504732\tabularnewline
+4969 & Groveton J H-H S & 0.5917185 & 0.5128205\tabularnewline
+4973 & Trinity H S & 0.4526636 & 0.4691358\tabularnewline
+4976 & Colmesneil J H/H S & 0.5114399 & 0.3333333\tabularnewline
+4980 & Woodville H S & 0.5029388 & 0.5000000\tabularnewline
+4984 & Warren H S & 0.4792174 & 0.3195876\tabularnewline
+4989 & Big Sandy H S & 0.5647707 & 0.4705882\tabularnewline
+4993 & Gilmer H S & 0.3764991 & 0.4000000\tabularnewline
+5000 & Harmony H S & 0.4222179 & 0.3709677\tabularnewline
+5004 & New Diana H S & 0.4801652 & 0.6933333\tabularnewline
+5008 & Union Grove H S & 0.5309951 & 0.7000000\tabularnewline
+5012 & Sabinal H S & 0.6139186 & 0.6181818\tabularnewline
+5016 & Uvalde H S & 0.6128577 & 0.4805654\tabularnewline
+5020 & Del Rio H S & 0.5608332 & 0.4654605\tabularnewline
+5027 & Canton H S & 0.5444935 & 0.5099338\tabularnewline
+5031 & Edgewood H S & 0.4495023 & 0.6166667\tabularnewline
+5035 & Grand Saline H S & 0.4757247 & 0.3595506\tabularnewline
+5039 & Martins Mill H S & 0.5990221 & 0.5833333\tabularnewline
+5043 & Van H S & 0.4803336 & 0.4205128\tabularnewline
+5047 & Wills Point H S & 0.3934657 & 0.3561644\tabularnewline
+5050 & Fruitvale H S & 0.4956687 & 0.3793103\tabularnewline
+5054 & Bloomington H S & 0.5046667 & 0.6216216\tabularnewline
+5064 & Victoria West H S & 0.5431699 & 0.5175439\tabularnewline
+5065 & Victoria East H S & 0.5037345 & 0.4528302\tabularnewline
+5066 & Liberty Academy & 0.4442926 & 0.2765957\tabularnewline
+5070 & New Waverly H S & 0.5484839 & 0.3906250\tabularnewline
+5076 & Huntsville H S & 0.4865967 & 0.4582210\tabularnewline
+5077 & Texas Online Preparatory H S & 0.5180236 &
+0.4044944\tabularnewline
+5081 & Hempstead H S & 0.5254502 & 0.3943662\tabularnewline
+5085 & Waller H S & 0.5308374 & 0.4145786\tabularnewline
+5089 & Royal H S & 0.4787162 & 0.3448276\tabularnewline
+5093 & Monahans H S & 0.4942982 & 0.5338346\tabularnewline
+5097 & Brenham H S & 0.5173908 & 0.5851393\tabularnewline
+5099 & Burton H S & 0.4674168 & 0.5263158\tabularnewline
+5115 & Nixon H S & 0.6192135 & 0.5336134\tabularnewline
+5116 & Martin H S & 0.5472225 & 0.4245283\tabularnewline
+5117 & Dr Leo Cigarroa H S & 0.5073704 & 0.4466292\tabularnewline
+5118 & Hector J Garcia Early College H S & 0.7749856 &
+0.8989899\tabularnewline
+5131 & John B Alexander H S & 0.5665120 & 0.7133858\tabularnewline
+5132 & United South H S & 0.4466715 & 0.6101695\tabularnewline
+5133 & Lyndon B Johnson & 0.4575370 & 0.5309883\tabularnewline
+5139 & Boling H S & 0.5166110 & 0.6716418\tabularnewline
+5143 & East Bernard H S & 0.5415512 & 0.8441558\tabularnewline
+5147 & El Campo H S & 0.5096599 & 0.4838710\tabularnewline
+5151 & Wharton H S & 0.5080753 & 0.5625000\tabularnewline
+5154 & Louise H S & 0.5755769 & 0.5142857\tabularnewline
+5159 & Burkburnett H S & 0.5027785 & 0.3409091\tabularnewline
+5162 & Electra Junior/Senior High & 0.5969594 & 0.5925926\tabularnewline
+5166 & Iowa Park H S & 0.4167633 & 0.4000000\tabularnewline
+5178 & Hirschi H S & 0.3602862 & 0.3238095\tabularnewline
+5179 & Wichita Falls H S & 0.3865329 & 0.3297101\tabularnewline
+5180 & Rider H S & 0.5147399 & 0.4913793\tabularnewline
+5184 & City View Junior/Senior High & 0.4502168 &
+0.3684211\tabularnewline
+5188 & Vernon H S & 0.3927170 & 0.5772358\tabularnewline
+5193 & Lyford H S & 0.5151138 & 0.5531915\tabularnewline
+5197 & Raymondville H S & 0.5694937 & 0.5222222\tabularnewline
+5199 & Meridian World School Llc & 0.6014882 & 0.6250000\tabularnewline
+5203 & Florence H S & 0.5194268 & 0.4687500\tabularnewline
+5213 & Chip Richarte H S & 0.3255013 & 0.1764706\tabularnewline
+5214 & Georgetown H S & 0.5961294 & 0.5325843\tabularnewline
+5215 & East View H S & 0.5336728 & 0.4156627\tabularnewline
+5219 & Granger School & 0.6368848 & 0.4333333\tabularnewline
+5223 & Hutto H S & 0.5666165 & 0.4660194\tabularnewline
+5227 & Jarrell H S & 0.5124296 & 0.3936170\tabularnewline
+5231 & Liberty Hill H S & 0.6257892 & 0.5884774\tabularnewline
+5250 & Cedar Ridge H S & 0.6258043 & 0.5891341\tabularnewline
+5251 & Westwood H S & 0.7513076 & 0.6781046\tabularnewline
+5252 & Success H S & 0.3323345 & 0.1225071\tabularnewline
+5253 & Round Rock H S & 0.6900766 & 0.6826347\tabularnewline
+5254 & McNeil H S & 0.6360826 & 0.6703499\tabularnewline
+5255 & Stony Point H S & 0.5650145 & 0.5247148\tabularnewline
+5259 & Taylor H S & 0.5561752 & 0.4139344\tabularnewline
+5263 & Thrall H S & 0.6583827 & 0.6034483\tabularnewline
+5281 & Leander H S & 0.5581923 & 0.5768501\tabularnewline
+5282 & Vista Ridge H S & 0.6309819 & 0.6666667\tabularnewline
+5283 & Vandegrift H S & 0.7662817 & 0.6034483\tabularnewline
+5284 & Cedar Park H S & 0.6848736 & 0.7027027\tabularnewline
+5285 & New Hope H S & 0.2762164 & 0.2022472\tabularnewline
+5286 & Rouse H S & 0.5533824 & 0.5869159\tabularnewline
+5290 & Floresville H S & 0.5475149 & 0.4761905\tabularnewline
+5294 & La Vernia H S & 0.6376122 & 0.5363985\tabularnewline
+5298 & Poth H S & 0.6997486 & 0.5967742\tabularnewline
+5302 & Stockdale H S & 0.5356881 & 0.4237288\tabularnewline
+5305 & Kermit H S & 0.3651952 & 0.4915254\tabularnewline
+5306 & Wink H S & 0.5306858 & 0.5000000\tabularnewline
+5310 & Alvord H S & 0.5946024 & 0.5000000\tabularnewline
+5314 & Boyd H S & 0.4633421 & 0.2934783\tabularnewline
+5318 & Bridgeport H S & 0.5712842 & 0.4265734\tabularnewline
+5322 & Chico H S & 0.5208851 & 0.4666667\tabularnewline
+5326 & Decatur H S & 0.4935760 & 0.5173913\tabularnewline
+5330 & Paradise H S & 0.5300019 & 0.5128205\tabularnewline
+5334 & Hawkins H S & 0.4532844 & 0.5111111\tabularnewline
+5338 & Mineola H S & 0.4983088 & 0.5000000\tabularnewline
+5342 & Quitman H S & 0.4588487 & 0.4626866\tabularnewline
+5346 & Alba-Golden H S & 0.4867930 & 0.4821429\tabularnewline
+5350 & Winnsboro H S & 0.3674350 & 0.5535714\tabularnewline
+5354 & Denver City H S & 0.5383928 & 0.6356589\tabularnewline
+5361 & Graham H S & 0.5319045 & 0.5793103\tabularnewline
+5363 & Olney H S & 0.4061253 & 0.5128205\tabularnewline
+5367 & Zapata H S & 0.3586855 & 0.4257426\tabularnewline
+5371 & Crystal City H S & 0.4880215 & 0.4426230\tabularnewline
+5373 & La Pryor H S & 0.3899394 & 0.5937500\tabularnewline
+39998 & NA & 0.2783427 & 0.0322581\tabularnewline
+39999 & NA & 0.1103830 & 0.1851852\tabularnewline
+40000 & NA & 0.2646875 & 0.0083333\tabularnewline
+40001 & NA & 0.3186636 & 0.0909091\tabularnewline
+40002 & NA & 0.2676253 & 0.1739130\tabularnewline
+40003 & NA & 0.3639858 & 0.0588235\tabularnewline
+40004 & NA & 0.3255251 & 0.0886076\tabularnewline
+40005 & NA & 0.2792475 & 0.0350877\tabularnewline
+40006 & NA & 0.3359080 & 0.4067797\tabularnewline
+40007 & NA & 0.2717529 & 0.1632653\tabularnewline
+40008 & NA & 0.2306204 & 0.3870968\tabularnewline
+40009 & NA & 0.3769936 & 0.1052632\tabularnewline
+40010 & NA & 0.2420060 & 0.1060606\tabularnewline
+40011 & NA & 0.0708305 & 0.0384615\tabularnewline
+40012 & NA & 0.3857550 & 0.0873016\tabularnewline
+40013 & NA & 0.2585106 & 0.0357143\tabularnewline
+40014 & NA & 0.1473716 & 0.0681818\tabularnewline
+40015 & NA & 0.2017490 & 0.1333333\tabularnewline
+40016 & NA & 0.3575931 & 0.1014493\tabularnewline
+40017 & NA & 0.3339504 & 0.4909091\tabularnewline
+40018 & NA & 0.2786211 & 0.3823529\tabularnewline
+40019 & NA & 0.3799586 & 0.5000000\tabularnewline
+40020 & NA & 0.3573920 & 0.1509434\tabularnewline
+40021 & NA & 0.3384670 & 0.1509434\tabularnewline
+40022 & NA & 0.3448820 & 0.0285714\tabularnewline
+40023 & NA & 0.3808297 & 0.6428571\tabularnewline
+40024 & NA & 0.5685312 & 0.6282051\tabularnewline
+40025 & NA & 0.2740993 & 0.3055556\tabularnewline
+40026 & NA & 0.3245487 & 0.3103448\tabularnewline
+40027 & NA & 0.0497364 & 0.2333333\tabularnewline
+40028 & NA & 0.1811154 & 0.0571429\tabularnewline
+40029 & NA & 0.3242098 & 0.1400000\tabularnewline
+40030 & NA & 0.3602625 & 0.5000000\tabularnewline
+40031 & NA & 0.2565268 & 0.2564103\tabularnewline
+40032 & NA & 0.0276050 & 0.0000000\tabularnewline
+40033 & NA & 0.3359951 & 0.1052632\tabularnewline
+40034 & NA & 0.1232659 & 0.1000000\tabularnewline
+40035 & NA & 0.0206676 & 0.0000000\tabularnewline
+40036 & NA & NA & 0.5033333\tabularnewline
+40037 & NA & NA & 0.1081081\tabularnewline
+40038 & NA & 0.3651200 & 0.1666667\tabularnewline
+40039 & NA & 0.3507097 & 0.0606061\tabularnewline
+40040 & NA & 0.2983029 & 0.1851852\tabularnewline
+40041 & NA & 0.3448135 & 0.1162791\tabularnewline
+40042 & NA & 0.5290525 & 0.8552632\tabularnewline
+40043 & NA & 0.3561334 & 0.0707071\tabularnewline
+40044 & NA & 0.2790611 & 0.0363636\tabularnewline
+40045 & NA & 0.3182166 & 0.2238806\tabularnewline
+40046 & NA & 0.3314430 & 0.1803279\tabularnewline
+40047 & NA & 0.3893218 & 0.0784314\tabularnewline
+40048 & NA & 0.4132411 & 0.4789916\tabularnewline
+40049 & NA & 0.3194872 & 0.1042945\tabularnewline
+40050 & NA & 0.4094261 & 0.4347826\tabularnewline
+40051 & NA & 0.1496022 & 0.1162791\tabularnewline
+40052 & NA & 0.2778013 & 0.4000000\tabularnewline
+40053 & NA & 0.3731765 & 0.1428571\tabularnewline
+40054 & NA & 0.2357095 & 0.0370370\tabularnewline
+40055 & NA & 0.1306638 & 0.0540541\tabularnewline
+40056 & NA & 0.2091241 & 0.1525424\tabularnewline
+40057 & NA & 0.2951375 & 0.0515464\tabularnewline
+40058 & NA & 0.3399132 & 0.1860465\tabularnewline
+40059 & NA & 0.4127296 & 0.1578947\tabularnewline
+40060 & NA & 0.3085819 & 0.0208333\tabularnewline
+40061 & NA & 0.2379612 & 0.1728395\tabularnewline
+40062 & NA & 0.2864144 & 0.0000000\tabularnewline
+40063 & NA & 0.1140917 & 0.1388889\tabularnewline
+40064 & NA & 0.3952473 & 0.5675676\tabularnewline
+40065 & NA & 0.2120909 & 0.0689655\tabularnewline
+40066 & NA & 0.2013615 & 0.0571429\tabularnewline
+40067 & NA & 0.3605052 & 0.4507042\tabularnewline
+40068 & NA & 0.1414583 & 0.0312500\tabularnewline
+40069 & NA & 0.2658787 & 0.2051282\tabularnewline
+40070 & NA & 0.3639016 & 0.4117647\tabularnewline
+40071 & NA & 0.2992768 & 0.2222222\tabularnewline
+40072 & NA & 0.2320107 & 0.2222222\tabularnewline
+40073 & NA & 0.3740439 & 0.1454545\tabularnewline
+40074 & NA & 0.2951189 & 0.0947368\tabularnewline
+40075 & NA & 0.3463171 & 0.1197605\tabularnewline
+40076 & NA & 0.0986864 & 0.0666667\tabularnewline
+40077 & NA & 0.2521694 & 0.5625000\tabularnewline
+40078 & NA & 0.4497374 & 0.7421875\tabularnewline
+40079 & NA & 0.3840143 & 0.1355932\tabularnewline
+40080 & NA & 0.3060639 & 0.0769231\tabularnewline
+40081 & NA & 0.3157181 & 0.3103448\tabularnewline
+40082 & NA & 0.4038238 & 0.3548387\tabularnewline
+40083 & NA & 0.4025245 & 0.1481481\tabularnewline
+40084 & NA & 0.2479420 & 0.1388889\tabularnewline
+40085 & NA & 0.3401455 & 0.0697674\tabularnewline
+40086 & NA & 0.3215556 & 0.1481481\tabularnewline
+40087 & NA & 0.3799216 & 0.3200000\tabularnewline
+40088 & NA & 0.3176983 & 0.0645161\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{document}
